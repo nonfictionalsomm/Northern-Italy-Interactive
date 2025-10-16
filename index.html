@@ -220,18 +220,27 @@
         
         #test-questions-container {
             margin-top: 2rem;
-            background: #fff;
-            padding: 1.5rem;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        #test-questions-container ol {
-            padding-left: 25px;
         }
         
-        #test-questions-container li {
+        .test-question-item {
+             background: #fff;
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-color);
             margin-bottom: 1.5rem;
-            font-size: 1.1em;
+        }
+
+        .test-answer {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+        }
+        
+        #test-questions-container ol {
+            padding-left: 0;
+            list-style-type: none;
         }
 
         /* Responsive Navbar */
@@ -273,6 +282,7 @@
         <h1>An Advanced Guide to the Wines of Northern Italy</h1>
         <p style="text-align: center; font-style: italic;">A comprehensive study tool derived exclusively from provided Master Sommelier-level source documents.</p>
 
+        <!-- REGION SECTIONS -->
         <section id="geography">
             <h2>Geography & Climate</h2>
             <p>Northern Italy's viticulture is defined by the dramatic interplay between the Alps, the Apennines, and the moderating influences of its major lakes and seas. The region encompasses a vast area from the French border in the west to the Slovenian border in the east, containing a diverse range of climates from alpine-continental to quasi-Mediterranean.</p>
@@ -719,6 +729,7 @@
             </ul>
         </section>
 
+        <!-- INTERACTIVE FEATURES -->
         <section id="flashcards" class="interactive-section">
             <h2>Interactive Flashcard Deck</h2>
             <div class="deck-controls">
@@ -738,9 +749,10 @@
                 </div>
             </div>
             <div class="deck-controls">
+                <button id="prev-card-btn">Previous Card</button>
+                <button id="next-card-btn">Next Card</button>
                 <button id="mark-learned-btn">Mark as Learned</button>
                  <button id="return-to-working-btn">Return to Working Deck</button>
-                <button id="next-card-btn">Next Card</button>
             </div>
             <div class="deck-info" id="deck-info">Select a deck to start studying.</div>
         </section>
@@ -750,10 +762,10 @@
             <div class="test-controls">
                 <p>Generate a randomized practice exam with questions mirroring the style and difficulty of the Advanced Sommelier theory exam.</p>
                 <button id="generate-test-btn">Generate 5-Question Test</button>
+                <button id="toggle-answers-btn" style="display: none;">Show Answers</button>
             </div>
-            <div id="test-questions-container" style="display:none;">
-                <h3>Practice Exam</h3>
-                <ol id="test-questions-list"></ol>
+            <div id="test-questions-container">
+                <!-- Test questions will be dynamically inserted here -->
             </div>
         </section>
 
@@ -761,54 +773,77 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- DATA ---
+            // --- EXPANDED DATA ---
             const flashcardData = [
+                // Piedmont
                 { category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barolo DOCG?", answer: "38 months total aging from November 1 of the harvest year, with a minimum of 18 months in wood." },
                 { category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barbaresco Riserva DOCG?", answer: "50 months total aging from November 1 of the harvest year, with a minimum of 9 months in wood." },
                 { category: "Piedmont", question: "Contrast the soil types and resulting wine styles of Barolo's Tortonian vs. Serravallian zones.", answer: "Tortonian soils (La Morra, Barolo) are younger, calcareous marl, producing softer, more aromatic and elegant wines. Serravallian soils (Monforte d'Alba, Serralunga d'Alba) are older, less fertile sandstone marls, producing more powerful, structured, and tannic wines." },
+                { category: "Piedmont", question: "What are the four communes that make up the Barbaresco DOCG?", answer: "Barbaresco, Neive, Treiso, and a portion of San Rocco Seno d'Elvio (a frazione of Alba)." },
+                { category: "Piedmont", question: "What are the aging requirements for Ghemme DOCG Riserva?", answer: "A minimum of 46 months from Nov. 1, including a minimum of 24 months in wood and 6 months in bottle." },
+                { category: "Piedmont", question: "What is the primary grape and style of Ruchè di Castagnole Monferrato DOCG?", answer: "Minimum 90% Ruchè, a dry, aromatic red wine known for its distinctive floral (rose) and spicy notes." },
+                { category: "Piedmont", question: "What are the three main phenotypes of Nebbiolo?", answer: "Lampia (most common), Michet (a virused version of Lampia with lower yields), and Rosé (genetically a distinct but related variety)." },
+                { category: "Piedmont", question: "What is the main grape of Gavi DOCG?", answer: "100% Cortese." },
+                { category: "Piedmont", question: "What is the primary difference between Dolcetto d'Alba and Dolcetto di Dogliani?", answer: "Dogliani DOCG is considered the superior zone for Dolcetto, requiring lower yields and higher minimum alcohol, producing more structured and age-worthy wines compared to the generally fruitier Dolcetto d'Alba." },
+                
+                // Lombardy
                 { category: "Lombardy", question: "What are the primary grape varieties and minimum lees aging for non-vintage Franciacorta DOCG?", answer: "Grapes: Chardonnay, Pinot Nero, and up to 50% Pinot Bianco. Minimum lees aging is 18 months." },
                 { category: "Lombardy", question: "What is Franciacorta Satèn?", answer: "A 'Blanc de Blancs' style made only from white grapes (Chardonnay and up to 50% Pinot Bianco). It is bottled at a lower pressure (max 5 atm) to create a softer, creamier mousse and must be in the Brut style. It requires 24 months on the lees." },
+                { category: "Lombardy", question: "What are the minimum lees aging requirements for Franciacorta Riserva?", answer: "A minimum of 60 months on the lees. Total aging must be at least 67 months from harvest." },
                 { category: "Lombardy", question: "What is Sforzato di Valtellina?", answer: "A dry passito DOCG red wine from Valtellina made from 90%+ Nebbiolo (Chiavennasca) grapes that are dried for ~3 months. It must be aged for at least 20 months (12 in wood) and have a minimum 14% ABV." },
                 { category: "Lombardy", question: "List the 5 subzones of Valtellina Superiore DOCG.", answer: "Maroggia, Sassella, Grumello, Inferno, and Valgella." },
+                { category: "Lombardy", question: "What is the local name for Croatina in the Oltrepò Pavese, and what DOC is it most associated with?", answer: "It is locally called Bonarda, and it's the primary grape for Bonarda dell'Oltrepò Pavese DOC." },
+                { category: "Lombardy", question: "What is the primary grape of Oltrepò Pavese Metodo Classico DOCG and what is the minimum percentage required?", answer: "Pinot Nero, with a minimum of 70% required for the standard Metodo Classico, and 85% for the 'Pinot Nero' designation." },
+                
+                // Veneto
                 { category: "Veneto", question: "What is the 'ripasso' method?", answer: "A technique unique to Valpolicella where young Valpolicella wine is re-fermented on the unpressed, still-warm grape skins of Amarone or Recioto, adding color, alcohol, and complexity." },
                 { category: "Veneto", question: "What are the primary grapes and aging requirements for Amarone della Valpolicella Riserva DOCG?", answer: "Grapes: 45-95% Corvina/Corvinone, 5-30% Rondinella. Aging: Minimum 4 years from November 1 of the harvest year." },
                 { category: "Veneto", question: "What are the two primary soil types of Soave Classico and how do they affect wine style?", answer: "1. Volcanic soils (basalt/tuff) in the east (Monteforte) produce structured, mineral-driven, ageworthy wines. 2. Limestone soils in the west (Soave) produce more elegant and aromatic wines." },
                 { category: "Veneto", question: "What is the top of the quality pyramid in Conegliano Valdobbiadene Prosecco DOCG?", answer: "Superiore di Cartizze DOCG, a 107-hectare 'grand cru' subzone known for producing the most complex and refined Prosecco." },
+                { category: "Veneto", question: "What is a 'Rive' Prosecco?", answer: "A Prosecco Superiore from one of 43 specific steep-sloped communes or hamlets within the Conegliano Valdobbiadene DOCG, functioning as a cru designation with lower yields and mandatory hand-harvesting." },
+                { category: "Veneto", question: "What is the main grape variety for wines from Lugana DOC?", answer: "Minimum 90% Turbiana, which is genetically identical to Verdicchio." },
+                { category: "Veneto", question: "What are the 33 UGAs of Soave Classico?", answer: "Unità Geografiche Aggiuntive, or Additional Geographical Units. They are legally defined crus, such as Monte Carbonare and Calvarino, that can be named on the label." },
+                
+                // Trentino-Alto Adige
                 { category: "Trentino-Alto Adige", question: "What are the primary grape varieties for Trento DOC?", answer: "Chardonnay, Pinot Nero, Pinot Bianco, and/or Pinot Meunier." },
-                { category: "Trentino-Alto Adige", question: "What is the local name for Nebbiolo in Alto Piemonte?", answer: "Spanna. In Valtellina it is Chiavennasca and in Valle d'Aosta it is Picotendro."},
+                { category: "Trentino-Alto Adige", question: "What is the local name for Nebbiolo in Alto Piemonte?", answer: "Spanna. (In Valtellina it is Chiavennasca and in Valle d'Aosta it is Picotendro)." },
                 { category: "Trentino-Alto Adige", question: "What is 'Kretzer'?", answer: "The local German-dialect term in Alto Adige for a rosé (Rosato) wine, particularly one made from Lagrein or Schiava." },
+                { category: "Trentino-Alto Adige", question: "What is the signature red grape of the Teroldego Rotaliano DOC?", answer: "100% Teroldego." },
+                { category: "Trentino-Alto Adige", question: "What is the local German-language name for Alto Adige?", answer: "Südtirol." },
+                { category: "Trentino-Alto Adige", question: "What is the Santa Maddalena (St. Magdalener) DOC?", answer: "A DOC within Alto Adige for red wines based on a minimum of 85% Schiava, known for being one of the fuller-bodied styles of Schiava." },
+
+                // Friuli-Venezia Giulia
                 { category: "Friuli-Venezia Giulia", question: "What is 'ponca' soil?", answer: "The local Friulian term for the Eocene-era flysch soil, composed of stratified marl and sandstone, characteristic of the Collio and Colli Orientali hills." },
                 { category: "Friuli-Venezia Giulia", question: "What is 'Ramato'?", answer: "Meaning 'coppery,' it refers to a traditional skin-contact style of Pinot Grigio in Friuli, which results in a wine with a coppery hue." },
                 { category: "Friuli-Venezia Giulia", question: "Which producer is credited with saving the Schioppettino grape from extinction?", answer: "The Rapuzzi family of Ronchi di Cialla." },
+                { category: "Friuli-Venezia Giulia", question: "What is the flagship white grape of Friuli, and what was its former name?", answer: "Friulano, formerly known as Tocai Friulano." },
+                { category: "Friuli-Venezia Giulia", question: "Which DOCG is dedicated to a sweet wine made from 100% Verduzzo Friulano?", answer: "Ramandolo DOCG." },
+                { category: "Friuli-Venezia Giulia", question: "What is the primary red grape of the Carso DOC, and what is its synonym across the border in Slovenia?", answer: "Terrano, which is a biotype of Refosco. It is known as Teran in Slovenia." },
+                
+                // Liguria & Valle d'Aosta
                 { category: "Liguria", question: "What is the genetic relationship between Pigato, Vermentino, and Favorita?", answer: "DNA analysis has shown they are genetically the same variety. The differences are cultural and related to biotype expression in different terroirs." },
                 { category: "Liguria", question: "What is Cinque Terre Sciacchetrà?", answer: "A rare sweet passito wine from the Cinque Terre DOC, made from dried Bosco, Albarola, and Vermentino grapes. Riserva must be aged for 36 months." },
+                { category: "Liguria", question: "What is the main red grape of the Rossese di Dolceacqua DOC?", answer: "Minimum 95% Rossese." },
                 { category: "Valle d'Aosta", question: "Which grape variety is grown on pre-phylloxera rootstock at Europe's highest elevations in the Blanc de Morgex et de la Salle subzone?", answer: "Prié Blanc." },
+                { category: "Valle d'Aosta", question: "What is the most widely planted red grape in the Valle d'Aosta?", answer: "Petit Rouge." },
+                { category: "Valle d'Aosta", question: "List the 7 subzones of the Valle d'Aosta DOC.", answer: "Arnad-Montjovet, Blanc de Morgex et de La Salle, Chambave, Donnas, Enfer d'Arvier, Nus, Torrette." },
+                
+                // General
                 { category: "General", question: "What is the difference between Frizzante and Spumante?", answer: "Frizzante is semi-sparkling (1-2.5 atm pressure). Spumante is fully sparkling (minimum 3.5 atm pressure)." },
-                { category: "Piedmont", question: "What are the four communes that make up the Barbaresco DOCG?", answer: "Barbaresco, Neive, Treiso, and a portion of San Rocco Seno d'Elvio (a frazione of Alba)."},
-                { category: "Piedmont", question: "What are the aging requirements for Ghemme DOCG Riserva?", answer: "A minimum of 46 months from Nov. 1, including a minimum of 24 months in wood and 6 months in bottle."},
-                { category: "Piedmont", question: "What is the grape composition of Roero DOCG Rosso?", answer: "A minimum of 95% Nebbiolo."},
-                { category: "Piedmont", question: "What are the three main phenotypes of Nebbiolo?", answer: "Lampia (most common), Michet (a virused version of Lampia), and Rosé (genetically a distinct but related variety)."},
-                { category: "Lombardy", question: "What is the primary grape of Oltrepò Pavese Metodo Classico DOCG and what is the minimum percentage required?", answer: "Pinot Nero, with a minimum of 70% required for the standard Metodo Classico, and 85% for the 'Pinot Nero' designation."},
-                { category: "Lombardy", question: "What is the local name for Croatina in the Oltrepò Pavese, and what DOC is it most associated with?", answer: "It is locally called Bonarda, and it's the primary grape for Bonarda dell'Oltrepò Pavese DOC."},
-                { category: "Veneto", question: "What is the minimum percentage of Corvina/Corvinone in Amarone della Valpolicella?", answer: "45% to 95%."},
-                { category: "Veneto", question: "In Conegliano Valdobbiadene, what are the three tiers of the geographical quality pyramid?", answer: "1. Prosecco DOC (base/plains), 2. Conegliano Valdobbiadene Prosecco Superiore DOCG (hills), 3. Superiore di Cartizze DOCG (107-hectare 'grand cru')."},
-                { category: "Trentino-Alto Adige", question: "What is the signature red grape of the Teroldego Rotaliano DOC?", answer: "Teroldego (100%)."},
-                { category: "Trentino-Alto Adige", question: "What is the local German-language name for Alto Adige?", answer: "Südtirol."},
-                { category: "Friuli-Venezia Giulia", question: "What is the flagship white grape of Friuli, and what was its former name?", answer: "Friulano, formerly known as Tocai Friulano."},
-                { category: "Friuli-Venezia Giulia", question: "Which DOCG is dedicated to a sweet wine made from 100% Verduzzo Friulano?", answer: "Ramandolo DOCG."}
+                { category: "General", question: "Is chaptalization permitted for DOC/G wines in Italy?", answer: "No, chaptalization (the addition of sugar to unfermented grape must) is strictly prohibited for all DOC and DOCG wines." }
             ];
 
             const testQuestionData = [
-                { type: "List", question: "List the 5 core communes of the Barolo DOCG that account for almost 90% of production." },
-                { type: "Compare/Contrast", question: "Contrast the required grape varieties, minimum aging, and typical style of Franciacorta Satèn DOCG with Franciacorta Rosé DOCG." },
-                { type: "Explain", question: "Explain the 'appassimento' process as it applies to Amarone della Valpolicella, including the minimum drying period and typical weight loss of the grapes." },
-                { type: "Producer", question: "Describe the key differences in vinification philosophy and resulting wine style between iconic Amarone producers Giuseppe Quintarelli and Romano Dal Forno." },
-                { type: "List", question: "List the 7 subzones of the Valle d'Aosta DOC." },
-                { type: "Explain", question: "Explain the geological origins of 'ponca' soil and its influence on the style of wines from Collio and Friuli Colli Orientali." },
-                { type: "Compare/Contrast", question: "Contrast the required grape varieties and aging requirements for Gattinara DOCG and Ghemme DOCG." },
-                { type: "Producer", question: "Who is considered the pioneer of modern Friulian white wine, and what specific technological innovations did he introduce in the 1960s?" },
-                { type: "List", question: "List the 4 DOCGs of Veneto that are based on the 'appassimento' or dried-grape process." },
-                { type: "Explain", question: "Explain the 'Classese' initiative in Oltrepò Pavese. What is its goal and what are some of the stricter rules it will impose?" }
+                { type: "List", question: "List the 5 core communes of the Barolo DOCG that account for almost 90% of production.", answer: "The five core communes are La Morra, Barolo, Serralunga d'Alba, Monforte d'Alba, and Castiglione Falletto." },
+                { type: "Compare/Contrast", question: "Contrast the required grape varieties, minimum lees aging, and typical style of Franciacorta Satèn DOCG with Franciacorta Rosé DOCG.", answer: "Franciacorta Satèn is a 'blanc de blancs' made from Chardonnay and/or Pinot Bianco, bottled at a lower pressure (max 5 atm) for a creamier mousse, must be Brut, and requires 24 months on lees. Franciacorta Rosé must contain a minimum of 35% Pinot Nero (vinified as a rosé), has standard pressure, can range from Brut Nature to Demi-Sec, and also requires 24 months on lees." },
+                { type: "Explain", question: "Explain the 'appassimento' process as it applies to Amarone della Valpolicella, including the minimum drying period and typical weight loss of the grapes.", answer: "Appassimento is the process of drying grapes after harvest to concentrate sugars, flavors, and tannins. For Amarone, hand-harvested bunches are laid on mats or in plastic crates in ventilated lofts called 'fruttai'. The grapes must dry until at least December 1st of the harvest year, typically losing 35-45% of their original weight before being pressed." },
+                { type: "Producer", question: "Describe the key differences in vinification philosophy and resulting wine style between iconic Amarone producers Giuseppe Quintarelli and Romano Dal Forno.", answer: "Quintarelli is the icon of traditional Amarone, using very long appassimento and extended aging (7+ years) in large, neutral Slavonian botti, creating ethereal, complex, savory wines built for immense aging. Dal Forno is the leading modernist, using technological innovations to perfect the drying process and aging his wines in 100% new French barriques, resulting in wines of incredible density, power, polish, and concentration that are more approachable earlier." },
+                { type: "List", question: "List the 7 official subzones of the Valle d'Aosta DOC.", answer: "The seven subzones are: Arnad-Montjovet, Blanc de Morgex et de La Salle, Chambave, Donnas, Enfer d'Arvier, Nus, and Torrette." },
+                { type: "Explain", question: "Explain the geological origins of 'ponca' soil and its influence on the style of wines from Collio and Friuli Colli Orientali.", answer: "'Ponca' is a local term for the region's Eocene-era flysch soil. It was formed from ancient seabeds and consists of layered, friable marl (calcareous clay) and sandstone. This well-draining, mineral-rich soil forces vine roots deep, producing white wines with pronounced structure, salinity, and aromatic complexity, and reds with firm tannins." },
+                { type: "Compare/Contrast", question: "Contrast the required grape varieties and aging requirements for Gattinara DOCG and Ghemme DOCG.", answer: "Gattinara requires a minimum of 90% Nebbiolo (Spanna) and must age for 35 months (24 in wood). Ghemme requires a minimum of 85% Nebbiolo, with up to 15% Vespolina and/or Uva Rara, and must age for 34 months (18 in wood, 6 in bottle)." },
+                { type: "Producer", question: "Who was Renato Ratti and what was his primary contribution to the understanding of Barolo's terroir?", answer: "Renato Ratti was a key historical figure and producer in Barolo. His most significant contribution was creating the first comprehensive map of Barolo's crus (vineyards) in the 1970s. This work was foundational to the modern MGA (Menzioni Geografiche Aggiuntive) system, providing a detailed classification of the zone's best vineyard sites based on historical precedent and quality." },
+                { type: "List", question: "List the 4 DOCGs of Veneto that are based on the 'appassimento' or dried-grape process.", answer: "Amarone della Valpolicella DOCG (dry red), Recioto della Valpolicella DOCG (sweet red), Recioto di Soave DOCG (sweet white), and Recioto di Gambellara DOCG (sweet white)." },
+                { type: "Explain", question: "Describe the traditional vine training system of Valle d'Aosta and its functional purpose in the Alpine climate.", answer: "The traditional system is the Pergola Valdostana. It is a low-trained pergola that forms a canopy over the ground. Its purpose is twofold: it maximizes sun exposure for the grape bunches hanging underneath, and it traps radiant heat from the stony soils, protecting the vines from frost and aiding in ripening at high altitudes." }
             ];
 
             // --- FLASHCARD LOGIC ---
@@ -816,6 +851,7 @@
             let learnedDeck = [];
             let currentDeck = [];
             let currentCardIndex = -1;
+            let cardHistory = [];
             let studyingMode = '';
 
             const cardElement = document.getElementById('flashcard');
@@ -827,6 +863,7 @@
             const markLearnedBtn = document.getElementById('mark-learned-btn');
             const returnToWorkingBtn = document.getElementById('return-to-working-btn');
             const nextCardBtn = document.getElementById('next-card-btn');
+            const prevCardBtn = document.getElementById('prev-card-btn');
             const studyWorkingBtn = document.getElementById('study-working-btn');
             const studyLearnedBtn = document.getElementById('study-learned-btn');
 
@@ -839,13 +876,14 @@
 
             function setStudyMode(mode) {
                 studyingMode = mode;
-                currentCardIndex = -1; // Reset index
+                currentCardIndex = -1;
+                cardHistory = []; 
                 if (mode === 'working') {
                     currentDeck = workingDeck;
                 } else {
                     currentDeck = learnedDeck;
                 }
-                displayNewCard();
+                displayNewCard(true); // Initial card in new mode
                 updateButtonStates();
             }
 
@@ -856,93 +894,138 @@
             function updateButtonStates() {
                 const isDeckEmpty = currentDeck.length === 0;
                 nextCardBtn.disabled = isDeckEmpty || currentDeck.length <= 1;
+                prevCardBtn.disabled = cardHistory.length <= 1;
                 
                 if (studyingMode === 'working') {
                     markLearnedBtn.style.display = 'inline-block';
                     returnToWorkingBtn.style.display = 'none';
-                    markLearnedBtn.disabled = isDeckEmpty;
+                    markLearnedBtn.disabled = isDeckEmpty || currentCardIndex === -1;
                 } else if (studyingMode === 'learned') {
                     markLearnedBtn.style.display = 'none';
                     returnToWorkingBtn.style.display = 'inline-block';
-                    returnToWorkingBtn.disabled = isDeckEmpty;
+                    returnToWorkingBtn.disabled = isDeckEmpty || currentCardIndex === -1;
                 } else {
                     markLearnedBtn.style.display = 'inline-block';
                     returnToWorkingBtn.style.display = 'none';
                     markLearnedBtn.disabled = true;
                     nextCardBtn.disabled = true;
+                    prevCardBtn.disabled = true;
                 }
             }
 
-            function displayNewCard() {
+            function displayCard(index) {
+                if (index < 0 || index >= currentDeck.length) return;
+                currentCardIndex = index;
+                const card = currentDeck[currentCardIndex];
+                
                 cardElement.classList.remove('is-flipped');
-                setTimeout(() => { // Allow flip animation to finish before changing content
-                    if (currentDeck.length === 0) {
-                        questionElement.textContent = `This deck is empty.`;
-                        answerElement.textContent = 'Please select another deck to study.';
-                        categoryElement.textContent = 'Empty';
-                        categoryBackElement.textContent = 'Empty';
-                    } else {
-                        let newIndex;
-                        do {
-                            newIndex = Math.floor(Math.random() * currentDeck.length);
-                        } while (currentDeck.length > 1 && newIndex === currentCardIndex);
-                        currentCardIndex = newIndex;
-                        
-                        const card = currentDeck[currentCardIndex];
-                        questionElement.textContent = card.question;
-                        answerElement.textContent = card.answer;
-                        categoryElement.textContent = card.category;
-                        categoryBackElement.textContent = card.category;
-                    }
+                setTimeout(() => {
+                    questionElement.textContent = card.question;
+                    answerElement.textContent = card.answer;
+                    categoryElement.textContent = card.category;
+                    categoryBackElement.textContent = card.category;
                     updateDeckInfo();
                     updateButtonStates();
                 }, 150);
             }
 
+            function displayNewCard(isFirstCard = false) {
+                if (currentDeck.length === 0) {
+                     questionElement.textContent = `This deck is empty.`;
+                    answerElement.textContent = 'Please select another deck to study.';
+                    categoryElement.textContent = 'Empty';
+                    categoryBackElement.textContent = 'Empty';
+                    updateButtonStates();
+                    return;
+                }
+
+                let newIndex;
+                do {
+                    newIndex = Math.floor(Math.random() * currentDeck.length);
+                } while (currentDeck.length > 1 && newIndex === currentCardIndex);
+
+                if (isFirstCard) {
+                     cardHistory = [newIndex];
+                } else {
+                     cardHistory.push(newIndex);
+                }
+               
+                displayCard(newIndex);
+            }
+
+            function displayPrevCard() {
+                if (cardHistory.length <= 1) return;
+                cardHistory.pop(); // Remove current card
+                const prevIndex = cardHistory[cardHistory.length - 1]; // Get previous
+                displayCard(prevIndex);
+            }
+
             function markAsLearned() {
-                if (studyingMode !== 'working' || currentDeck.length === 0) return;
-                const [cardToMove] = workingDeck.splice(currentCardIndex, 1);
+                if (studyingMode !== 'working' || currentDeck.length === 0 || currentCardIndex === -1) return;
+                const [cardToMove] = workingDeck.splice(workingDeck.findIndex(c => c === currentDeck[currentCardIndex]), 1);
                 learnedDeck.push(cardToMove);
-                currentCardIndex = -1; // Reset index to avoid out-of-bounds
-                displayNewCard();
+                cardHistory = [];
+                currentCardIndex = -1;
+                displayNewCard(true);
             }
 
             function returnToWorking() {
-                if (studyingMode !== 'learned' || currentDeck.length === 0) return;
-                const [cardToMove] = learnedDeck.splice(currentCardIndex, 1);
+                if (studyingMode !== 'learned' || currentDeck.length === 0 || currentCardIndex === -1) return;
+                const [cardToMove] = learnedDeck.splice(learnedDeck.findIndex(c => c === currentDeck[currentCardIndex]), 1);
                 workingDeck.push(cardToMove);
+                cardHistory = [];
                 currentCardIndex = -1;
-                displayNewCard();
+                displayNewCard(true);
             }
 
             cardElement.addEventListener('click', () => {
-                if (currentDeck.length > 0) {
+                if (currentDeck.length > 0 && currentCardIndex !== -1) {
                     cardElement.classList.toggle('is-flipped');
                 }
             });
             markLearnedBtn.addEventListener('click', markAsLearned);
             returnToWorkingBtn.addEventListener('click', returnToWorking);
-            nextCardBtn.addEventListener('click', displayNewCard);
+            nextCardBtn.addEventListener('click', () => displayNewCard(false));
+            prevCardBtn.addEventListener('click', displayPrevCard);
             studyWorkingBtn.addEventListener('click', () => setStudyMode('working'));
             studyLearnedBtn.addEventListener('click', () => setStudyMode('learned'));
 
             // --- TEST GENERATOR LOGIC ---
             const generateTestBtn = document.getElementById('generate-test-btn');
             const testContainer = document.getElementById('test-questions-container');
-            const testList = document.getElementById('test-questions-list');
+            const toggleAnswersBtn = document.getElementById('toggle-answers-btn');
             
             generateTestBtn.addEventListener('click', () => {
-                testContainer.style.display = 'block';
-                testList.innerHTML = '';
+                testContainer.innerHTML = ''; // Clear previous test
                 
                 const shuffled = [...testQuestionData].sort(() => 0.5 - Math.random());
                 const selectedQuestions = shuffled.slice(0, 5);
                 
-                selectedQuestions.forEach(q => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<strong>[${q.type}]</strong> ${q.question}`;
-                    testList.appendChild(listItem);
+                selectedQuestions.forEach((q, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'test-question-item';
+                    item.innerHTML = `
+                        <p><strong>${index + 1}. [${q.type}]</strong> ${q.question}</p>
+                        <div class="test-answer">
+                            <p>${q.answer}</p>
+                        </div>
+                    `;
+                    testContainer.appendChild(item);
                 });
+                
+                toggleAnswersBtn.style.display = 'inline-block';
+                toggleAnswersBtn.textContent = 'Show Answers';
+            });
+            
+            toggleAnswersBtn.addEventListener('click', () => {
+                const answers = testContainer.querySelectorAll('.test-answer');
+                const isHidden = answers[0].style.display === 'none' || answers[0].style.display === '';
+                
+                answers.forEach(answer => {
+                    answer.style.display = isHidden ? 'block' : 'none';
+                });
+                
+                toggleAnswersBtn.textContent = isHidden ? 'Hide Answers' : 'Show Answers';
             });
 
             // Initialize on load

@@ -6,16 +6,16 @@
     <title>Advanced Guide to the Wines of Northern Italy</title>
     <style>
         :root {
-            --primary-color: #4a148c; /* Deep purple */
-            --secondary-color: #7b1fa2; /* Lighter purple */
-            --background-color: #f9f9f9;
+            --primary-color: #2c3e50; /* Dark Slate Blue */
+            --secondary-color: #34495e; /* Lighter Slate Blue */
+            --background-color: #f8f9fa;
             --text-color: #333;
-            --header-color: #212121;
-            --border-color: #ddd;
+            --header-color: #212529;
+            --border-color: #dee2e6;
             --card-bg: #ffffff;
-            --button-bg: #6a1b9a;
-            --button-hover-bg: #4a148c;
-            --link-color: #7b1fa2;
+            --button-bg: #2980b9;
+            --button-hover-bg: #2471a3;
+            --link-color: #2980b9;
         }
 
         body {
@@ -33,7 +33,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             overflow-x: auto;
             white-space: nowrap;
         }
@@ -104,7 +104,7 @@
         }
         
         tbody tr:hover {
-            background-color: #e9d8f3;
+            background-color: #eaf2f8;
         }
 
         ul {
@@ -144,6 +144,11 @@
         .button:hover, button:hover {
             background-color: var(--button-hover-bg);
         }
+        
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
 
         .flashcard-container {
             perspective: 1000px;
@@ -181,12 +186,9 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             background-color: white;
             border: 1px solid var(--border-color);
+            text-align: center;
         }
-
-        .flashcard-front {
-            
-        }
-
+        
         .flashcard-back {
             transform: rotateY(180deg);
             font-size: 0.9em;
@@ -213,6 +215,7 @@
             text-align: center;
             margin-top: 1rem;
             color: #666;
+            font-family: 'Helvetica Neue', sans-serif;
         }
         
         #test-questions-container {
@@ -275,25 +278,25 @@
             <p>Northern Italy's viticulture is defined by the dramatic interplay between the Alps, the Apennines, and the moderating influences of its major lakes and seas. The region encompasses a vast area from the French border in the west to the Slovenian border in the east, containing a diverse range of climates from alpine-continental to quasi-Mediterranean.</p>
             
             <h3>Piedmont (Piemonte)</h3>
-            [cite_start]<p>Meaning "foot of the mountain," Piedmont is cradled on three sides by the Alps and the Apennines[cite: 26572]. [cite_start]The Po River creates a fertile plain too rich for quality viticulture, pushing grape-growing to the southern foothills in the Langhe and Monferrato hills[cite: 26573, 26575]. [cite_start]The climate is continental, marked by cold, snowy winters and long, hot summers[cite: 18427]. [cite_start]A crucial feature is the "rain shadow" effect provided by the Alps, protecting the inner hills from harsh weather[cite: 18424, 26577]. [cite_start]The region is famous for the autumn fog (*nebbia*) that blankets the valleys, prolonging the ripening of the Nebbiolo grape[cite: 18429, 26579].</p>
+            <p>Meaning "foot of the mountain," Piedmont is cradled on three sides by the Alps and the Apennines. The Po River creates a fertile plain too rich for quality viticulture, pushing grape-growing to the southern foothills in the Langhe and Monferrato hills. The climate is continental, marked by cold, snowy winters and long, hot summers. A crucial feature is the "rain shadow" effect provided by the Alps, protecting the inner hills from harsh weather. The region is famous for the autumn fog (*nebbia*) that blankets the valleys, prolonging the ripening of the Nebbiolo grape.</p>
             
             <h3>Valle d'Aosta (Vallée d'Aoste)</h3>
-            [cite_start]<p>As Italy's smallest region, Valle d'Aosta consists of a single, 90km-long valley carved by the Dora Baltea river, flanked by the highest peaks in Europe, including Mont Blanc[cite: 28119]. [cite_start]Despite its Alpine location, it has a surprisingly warm and dry continental climate due to a pronounced rain shadow effect[cite: 28121]. [cite_start]This allows for the successful ripening of grapes on steep, south-facing terraces at elevations reaching up to 1,300 meters, among the highest in Europe[cite: 28120, 25153].</p>
+            <p>As Italy's smallest region, Valle d'Aosta consists of a single, 90km-long valley carved by the Dora Baltea river, flanked by the highest peaks in Europe, including Mont Blanc. Despite its Alpine location, it has a surprisingly warm and dry continental climate due to a pronounced rain shadow effect. This allows for the successful ripening of grapes on steep, south-facing terraces at elevations reaching up to 1,300 meters, among the highest in Europe.</p>
 
             <h3>Liguria</h3>
-            [cite_start]<p>Liguria is a narrow, crescent-shaped strip of mountainous coastline where the Alps and Apennines meet the sea[cite: 25111, 26703]. [cite_start]The climate is Mediterranean, moderated by the sea, with mild winters and warm summers[cite: 28127]. [cite_start]Vineyards are almost exclusively planted on man-made dry-stone wall terraces (*muretti a secco*) on precipitous cliffsides, a practice known as "heroic viticulture"[cite: 28099, 28069]. [cite_start]The constant, salt-laden sea breezes are critical for ventilating vineyards and mitigating high humidity[cite: 28128, 28272].</p>
+            <p>Liguria is a narrow, crescent-shaped strip of mountainous coastline where the Alps and Apennines meet the sea. The climate is Mediterranean, moderated by the sea, with mild winters and warm summers. Vineyards are almost exclusively planted on man-made dry-stone wall terraces (*muretti a secco*) on precipitous cliffsides, a practice known as "heroic viticulture". The constant, salt-laden sea breezes are critical for ventilating vineyards and mitigating high humidity.</p>
             
             <h3>Lombardy (Lombardia)</h3>
-            [cite_start]<p>Lombardy stretches from the Alps in the north to the Po River Valley in the south[cite: 28579]. This geographical diversity creates a range of climates. [cite_start]The Alpine valley of **Valtellina** has a cool, continental climate, but its steep, south-facing terraces on the Rhaetian Alps provide maximum sun exposure[cite: 28737]. [cite_start]**Franciacorta**, a morainic amphitheater of hills, has its temperate climate moderated by the deep basin of Lake Iseo[cite: 28644]. [cite_start]**Oltrepò Pavese**, situated on the 45th parallel, consists of the northern foothills of the Apennines and has a moderated climate with significant diurnal shifts, ideal for Pinot Nero[cite: 28836, 28845].</p>
+            <p>Lombardy stretches from the Alps in the north to the Po River Valley in the south. This geographical diversity creates a range of climates. The Alpine valley of **Valtellina** has a cool, continental climate, but its steep, south-facing terraces on the Rhaetian Alps provide maximum sun exposure. **Franciacorta**, a morainic amphitheater of hills, has its temperate climate moderated by the deep basin of Lake Iseo. **Oltrepò Pavese**, situated on the 45th parallel, consists of the northern foothills of the Apennines and has a moderated climate with significant diurnal shifts, ideal for Pinot Nero.</p>
             
             <h3>Veneto</h3>
-            [cite_start]<p>Veneto's geography is defined by the Alps to the north, Lake Garda to the west, and the Adriatic Sea to the southeast[cite: 29750]. [cite_start]**Valpolicella** and **Soave** are located in the foothills of the Lessini Mountains north of Verona, with vineyards on hillsides from 100 to 600 meters[cite: 29732, 29734]. [cite_start]**Conegliano Valdobbiadene** is a dramatic landscape of steep "hogback" hills between 50 and 500 meters[cite: 29736]. [cite_start]The broader plains are used for high-volume production, including much of the Prosecco DOC[cite: 29706]. [cite_start]Lake Garda provides a crucial moderating influence for Valpolicella, Bardolino, and Custoza[cite: 29750].</p>
+            <p>Veneto's geography is defined by the Alps to the north, Lake Garda to the west, and the Adriatic Sea to the southeast. **Valpolicella** and **Soave** are located in the foothills of the Lessini Mountains north of Verona, with vineyards on hillsides from 100 to 600 meters. **Conegliano Valdobbiadene** is a dramatic landscape of steep "hogback" hills between 50 and 500 meters. The broader plains are used for high-volume production, including much of the Prosecco DOC. Lake Garda provides a crucial moderating influence for Valpolicella, Bardolino, and Custoza.</p>
             
             <h3>Trentino-Alto Adige</h3>
-            [cite_start]<p>This northernmost region is defined by the Adige river valley and its tributaries, forming a 'Y' shape flanked by the Alps and Dolomites[cite: 29158]. [cite_start]The climate is a unique synthesis of Alpine and Mediterranean influences; the Alps provide protection from cold northern winds while warm air flows up from Lake Garda and the south[cite: 29159, 29160]. [cite_start]This creates warm summer days with significant diurnal temperature variation, crucial for developing aromatics while preserving acidity[cite: 29162]. [cite_start]Vineyards are planted on steep slopes at elevations from 200 to over 1,000 meters[cite: 29158].</p>
+            <p>This northernmost region is defined by the Adige river valley and its tributaries, forming a 'Y' shape flanked by the Alps and Dolomites. The climate is a unique synthesis of Alpine and Mediterranean influences; the Alps provide protection from cold northern winds while warm air flows up from Lake Garda and the south. This creates warm summer days with significant diurnal temperature variation, crucial for developing aromatics while preserving acidity. Vineyards are planted on steep slopes at elevations from 200 to over 1,000 meters.</p>
             
             <h3>Friuli-Venezia Giulia</h3>
-            [cite_start]<p>Located in Italy's northeastern corner, Friuli is "sandwiched" between the Carnic and Julian Alps to the north and the Adriatic Sea to the south[cite: 27656]. [cite_start]This creates a temperate-continental climate with high annual precipitation[cite: 27659]. [cite_start]The hilly zones of **Collio** and **Colli Orientali** form the top tier of the region's terroir, while the vast plains of **Friuli Grave** and **Isonzo** are defined by alluvial gravelly soils[cite: 27610, 27612]. [cite_start]The **Carso** is a unique limestone plateau bordering the Adriatic[cite: 27650].</p>
+            <p>Located in Italy's northeastern corner, Friuli is "sandwiched" between the Carnic and Julian Alps to the north and the Adriatic Sea to the south. This creates a temperate-continental climate with high annual precipitation. The hilly zones of **Collio** and **Colli Orientali** form the top tier of the region's terroir, while the vast plains of **Friuli Grave** and **Isonzo** are defined by alluvial gravelly soils. The **Carso** is a unique limestone plateau bordering the Adriatic.</p>
         </section>
 
         <section id="grapes">
@@ -341,24 +344,24 @@
             
             <h3>Vine Training & Planting Density</h3>
             <ul>
-                <li><strong>Piedmont/Lombardy (Nebbiolo):</strong> Traditionally uses the Guyot system. [cite_start]DOCG regulations for Barolo/Barbaresco mandate a minimum density of 3,500 vines/ha[cite: 16669, 16529]. [cite_start]Valtellina uses a modified Guyot on its steep terraces (*muretti*)[cite: 28724].</li>
-                [cite_start]<li><strong>Veneto (Valpolicella/Soave):</strong> The traditional system is the high-trained **Pergola Veronese**, which shades grapes from intense sun—an increasing advantage with climate change[cite: 29788, 29790]. [cite_start]Modern quality-focused plantings, and all new Soave Superiore vineyards, mandate the lower Guyot system[cite: 29791].</li>
-                <li><strong>Trentino-Alto Adige:</strong> A clear divide exists. [cite_start]The traditional **Pergola Trentina** is used to shade aromatic white grapes and control vigor[cite: 29206]. [cite_start]Modern, high-density vineyards (over 5,000 vines/ha) use the **Guyot** system, especially for red grapes and structured whites[cite: 29207].</li>
-                [cite_start]<li><strong>Friuli-Venezia Giulia (Prosecco):** The vigorous Glera grape is often trained on high-trained systems like **Sylvoz** or **Double-Arched Cane (Cappuccina)** to manage its long shoots[cite: 29792].</li>
-                [cite_start]<li><strong>Liguria/Valle d'Aosta ("Heroic Viticulture"):</strong> On extremely steep terraces, low **Pergoletta** (Liguria) or **Pergola Valdostana** (Valle d'Aosta) systems are traditional, designed to capture radiant heat and protect from elements[cite: 28175, 28161]. [cite_start]**Alberello** (bush vine) is also used in Liguria for its drought and wind resistance[cite: 28176].</li>
+                <li><strong>Piedmont/Lombardy (Nebbiolo):</strong> Traditionally uses the Guyot system. DOCG regulations for Barolo/Barbaresco mandate a minimum density of 3,500 vines/ha. Valtellina uses a modified Guyot on its steep terraces (*muretti*).</li>
+                <li><strong>Veneto (Valpolicella/Soave):</strong> The traditional system is the high-trained **Pergola Veronese**, which shades grapes from intense sun—an increasing advantage with climate change. Modern quality-focused plantings, and all new Soave Superiore vineyards, mandate the lower Guyot system.</li>
+                <li><strong>Trentino-Alto Adige:</strong> A clear divide exists. The traditional **Pergola Trentina** is used to shade aromatic white grapes and control vigor. Modern, high-density vineyards (over 5,000 vines/ha) use the **Guyot** system, especially for red grapes and structured whites.</li>
+                <li><strong>Friuli-Venezia Giulia (Prosecco):** The vigorous Glera grape is often trained on high-trained systems like **Sylvoz** or **Double-Arched Cane (Cappuccina)** to manage its long shoots.</li>
+                <li><strong>Liguria/Valle d'Aosta ("Heroic Viticulture"):</strong> On extremely steep terraces, low **Pergoletta** (Liguria) or **Pergola Valdostana** (Valle d'Aosta) systems are traditional, designed to capture radiant heat and protect from elements. **Alberello** (bush vine) is also used in Liguria for its drought and wind resistance.</li>
             </ul>
 
             <h3>Yields & Harvest</h3>
             <ul>
                 <li>Yields are strictly regulated by DOC/G law and are a primary quality indicator. Top DOCGs have the lowest limits.</li>
-                [cite_start]<li><strong>Barolo/Barbaresco DOCG:</strong> Maximum 8 tonnes/ha[cite: 16672, 16532].</li>
-                [cite_start]<li><strong>Amarone della Valpolicella DOCG:</strong> Maximum 12 t/ha, but only 65% of a producer's total yield can be used for Amarone, and grapes lose ~40% of their weight during drying, making the final yield much lower[cite: 19556, 19558].</li>
-                <li><strong>Franciacorta DOCG:</strong> Maximum 12 t/ha. [cite_start]Hand-harvesting is compulsory[cite: 28663, 28662].</li>
-                <li><strong>Conegliano Valdobbiadene DOCG:</strong> Ranges from 13.5 t/ha down to 12 t/ha for the top Cartizze cru. [cite_start]Hand-harvesting is required for "Rive" designated wines[cite: 20073, 20068].</li>
+                <li><strong>Barolo/Barbaresco DOCG:</strong> Maximum 8 tonnes/ha.</li>
+                <li><strong>Amarone della Valpolicella DOCG:</strong> Maximum 12 t/ha, but only 65% of a producer's total yield can be used for Amarone, and grapes lose ~40% of their weight during drying, making the final yield much lower.</li>
+                <li><strong>Franciacorta DOCG:</strong> Maximum 12 t/ha. Hand-harvesting is compulsory.</li>
+                <li><strong>Conegliano Valdobbiadene DOCG:</strong> Ranges from 13.5 t/ha down to 12 t/ha for the top Cartizze cru. Hand-harvesting is required for "Rive" designated wines.</li>
             </ul>
 
             <h3>Irrigation</h3>
-            [cite_start]<p>In line with traditional European quality wine law, standard irrigation is generally prohibited for DOC/G production to encourage deep root systems and terroir expression[cite: 18475]. [cite_start]However, the law permits **"irrigazione di soccorso"** (emergency/rescue irrigation) to save vines during periods of extreme drought, a practice increasingly necessary due to climate change[cite: 18477, 28189]. This is explicitly allowed in the *disciplinari* for nearly all major Northern Italian appellations.</p>
+            <p>In line with traditional European quality wine law, standard irrigation is generally prohibited for DOC/G production to encourage deep root systems and terroir expression. However, the law permits **"irrigazione di soccorso"** (emergency/rescue irrigation) to save vines during periods of extreme drought, a practice increasingly necessary due to climate change. This is explicitly allowed in the *disciplinari* for nearly all major Northern Italian appellations.</p>
         </section>
 
         <section id="vinification">
@@ -366,27 +369,27 @@
             <p>Winemaking in Northern Italy spans a vast spectrum from hyper-modern, technologically precise methods to ancient, ancestral techniques. The legal framework permits certain adjustments while strictly forbidding others.</p>
 
             <h3>The "Traditionalist vs. Modernist" Spectrum</h3>
-            [cite_start]<p>This philosophical divide, which famously defined the "Barolo Wars" of the 1980s, is a useful lens for understanding stylistic differences in many of the region's top red wines[cite: 18381].</p>
+            <p>This philosophical divide, which famously defined the "Barolo Wars" of the 1980s, is a useful lens for understanding stylistic differences in many of the region's top red wines.</p>
             <ul>
-                <li><strong>Traditionalist Approach:</strong> Emphasizes long maceration times (30+ days), fermentation in neutral vessels (concrete or large oak *tini*), and extended aging in large, old Slavonian oak casks (*botti grandi*) that do not impart wood flavor. The goal is a wine that transparently expresses its terroir and is built for long aging. [cite_start]Key figures include Bartolo Mascarello and Giuseppe Rinaldi[cite: 18491, 18496].</li>
-                <li><strong>Modernist Approach:</strong> Aims for wines that are more approachable in their youth. This involves shorter macerations (under 10 days) often in temperature-controlled rotary fermenters, and aging in small, new French oak barrels (*barriques*) that soften tannins more quickly and contribute notes of vanilla and spice. [cite_start]Key figures include Elio Altare and Angelo Gaja[cite: 18499, 18502, 18504].</li>
-                [cite_start]<li><strong>Modern Synthesis:</strong> Today, most producers occupy a middle ground, thoughtfully incorporating elements from both schools to best suit their specific vineyards and house style[cite: 18507].</li>
+                <li><strong>Traditionalist Approach:</strong> Emphasizes long maceration times (30+ days), fermentation in neutral vessels (concrete or large oak *tini*), and extended aging in large, old Slavonian oak casks (*botti grandi*) that do not impart wood flavor. The goal is a wine that transparently expresses its terroir and is built for long aging. Key figures include Bartolo Mascarello and Giuseppe Rinaldi.</li>
+                <li><strong>Modernist Approach:</strong> Aims for wines that are more approachable in their youth. This involves shorter macerations (under 10 days) often in temperature-controlled rotary fermenters, and aging in small, new French oak barrels (*barriques*) that soften tannins more quickly and contribute notes of vanilla and spice. Key figures include Elio Altare and Angelo Gaja.</li>
+                <li><strong>Modern Synthesis:</strong> Today, most producers occupy a middle ground, thoughtfully incorporating elements from both schools to best suit their specific vineyards and house style.</li>
             </ul>
 
             <h3>Regional Specialty Techniques</h3>
             <ul>
-                <li><strong>Appassimento:</strong> The process of drying grapes (Corvina, Garganega, Nebbiolo, etc.) on racks or mats for several months before fermentation. [cite_start]This concentrates sugars, acids, and flavors and is the defining technique for **Amarone della Valpolicella**, **Recioto**, and **Sforzato di Valtellina**[cite: 24197, 29856].</li>
-                <li><strong>Ripasso:</strong> A technique unique to Valpolicella where young Valpolicella wine is re-fermented on the unpressed, still-warm grape skins of Amarone or Recioto. [cite_start]This adds color, alcohol, tannin, and complexity[cite: 29858].</li>
-                <li><strong>Metodo Martinotti (Charmat Method):</strong> Secondary fermentation occurs in large pressurized tanks (*autoclave*). [cite_start]This method is used for the vast majority of **Prosecco** and **Lambrusco** to preserve the fresh, primary fruit aromas of the grapes[cite: 18521, 24678].</li>
-                <li><strong>Metodo Classico (Traditional Method):</strong> Secondary fermentation occurs in the bottle. [cite_start]This is legally mandated for all **Franciacorta DOCG**, **Oltrepò Pavese Metodo Classico DOCG**, and **Trento DOC** wines, creating complex, yeasty aromas from extended lees aging[cite: 28670, 29231].</li>
-                [cite_start]<li><strong>Skin Maceration (Orange Wines):</strong> A traditionalist revival, championed in Friuli by producers like Josko Gravner, involving extended skin contact for white grapes (e.g., Ribolla Gialla) in vessels like clay amphorae, creating textural, tannic, amber-colored wines[cite: 27599, 27601].</li>
+                <li><strong>Appassimento:</strong> The process of drying grapes (Corvina, Garganega, Nebbiolo, etc.) on racks or mats for several months before fermentation. This concentrates sugars, acids, and flavors and is the defining technique for **Amarone della Valpolicella**, **Recioto**, and **Sforzato di Valtellina**.</li>
+                <li><strong>Ripasso:</strong> A technique unique to Valpolicella where young Valpolicella wine is re-fermented on the unpressed, still-warm grape skins of Amarone or Recioto. This adds color, alcohol, tannin, and complexity.</li>
+                <li><strong>Metodo Martinotti (Charmat Method):</strong> Secondary fermentation occurs in large pressurized tanks (*autoclave*). This method is used for the vast majority of **Prosecco** and **Lambrusco** to preserve the fresh, primary fruit aromas of the grapes.</li>
+                <li><strong>Metodo Classico (Traditional Method):</strong> Secondary fermentation occurs in the bottle. This is legally mandated for all **Franciacorta DOCG**, **Oltrepò Pavese Metodo Classico DOCG**, and **Trento DOC** wines, creating complex, yeasty aromas from extended lees aging.</li>
+                <li><strong>Skin Maceration (Orange Wines):</strong> A traditionalist revival, championed in Friuli by producers like Josko Gravner, involving extended skin contact for white grapes (e.g., Ribolla Gialla) in vessels like clay amphorae, creating textural, tannic, amber-colored wines.</li>
             </ul>
             
             <h3>Legal Adjustments</h3>
             <ul>
-                [cite_start]<li><strong>Chaptalization:</strong> The addition of sugar to must to increase alcohol content is **strictly prohibited** for all DOC and DOCG wines in Italy[cite: 18510, 29266].</li>
-                [cite_start]<li><strong>Must Enrichment:</strong> Enrichment with concentrated grape must is permitted in some areas within certain limits to increase alcohol[cite: 21297].</li>
-                [cite_start]<li><strong>Acidification:</strong> The addition of tartaric acid is legally permitted and can be an important tool in very hot vintages to ensure balance and freshness, though it is often unnecessary in the high-altitude, cool-climate zones of the Alps[cite: 18512, 29268].</li>
+                <li><strong>Chaptalization:</strong> The addition of sugar to must to increase alcohol content is **strictly prohibited** for all DOC and DOCG wines in Italy.</li>
+                <li><strong>Must Enrichment:</strong> Enrichment with concentrated grape must is permitted in some areas within certain limits to increase alcohol.</li>
+                <li><strong>Acidification:</strong> The addition of tartaric acid is legally permitted and can be an important tool in very hot vintages to ensure balance and freshness, though it is often unnecessary in the high-altitude, cool-climate zones of the Alps.</li>
             </ul>
         </section>
 
@@ -473,38 +476,38 @@
                     </tr>
                 </tbody>
             </table>
-            [cite_start]<small>Source: Synthesized from multiple DOCG *disciplinari*[cite: 16667, 16668, 16527, 16528, 19552, 19553, 16388, 17556, 17604, 28677, 28678].</small>
+            <small>Source: Synthesized from multiple DOCG *disciplinari*.</small>
         </section>
 
         <section id="soils">
             <h2>Soils</h2>
             <h3>Piedmont: The Marine Sedimentary Soils of the Langhe</h3>
-            <p>The Langhe hills are an uplifted portion of an ancient seabed from the Miocene Epoch, composed primarily of calcareous marls and sandstone. [cite_start]The single most important geological factor defining Barolo styles is the divide between two soil ages[cite: 18406, 18408]:</p>
+            <p>The Langhe hills are an uplifted portion of an ancient seabed from the Miocene Epoch, composed primarily of calcareous marls and sandstone. The single most important geological factor defining Barolo styles is the divide between two soil ages:</p>
             <ul>
-                <li><strong>Tortonian Soils:</strong> Younger soils (approx. 9 million years old) found in La Morra and Barolo. They are richer in clay and magnesium, less compact, and more fertile. [cite_start]These bluish-grey marls produce wines that are more perfumed, elegant, and approachable, with softer tannins[cite: 18415, 18416, 18418].</li>
-                <li><strong>Serravallian (Helvetian) Soils:</strong> Older soils (approx. 12 million years old) found in Serralunga d'Alba, Monforte d'Alba, and Castiglione Falletto. These are less fertile, more compact calcareous marls with a higher percentage of sandstone. [cite_start]They produce powerful, structured, highly tannic Barolos built for exceptional long-term aging[cite: 18410, 18411, 18413].</li>
+                <li><strong>Tortonian Soils:</strong> Younger soils (approx. 9 million years old) found in La Morra and Barolo. They are richer in clay and magnesium, less compact, and more fertile. These bluish-grey marls produce wines that are more perfumed, elegant, and approachable, with softer tannins.</li>
+                <li><strong>Serravallian (Helvetian) Soils:</strong> Older soils (approx. 12 million years old) found in Serralunga d'Alba, Monforte d'Alba, and Castiglione Falletto. These are less fertile, more compact calcareous marls with a higher percentage of sandstone. They produce powerful, structured, highly tannic Barolos built for exceptional long-term aging.</li>
             </ul>
 
             <h3>Friuli-Venezia Giulia: Ponca, Grave, and Terra Rossa</h3>
             <p>Friuli's geology is highly diverse:</p>
             <ul>
-                <li><strong>Ponca:</strong> The most prestigious soil, found in the hills of Collio and Colli Orientali. It is a stratified Eocene-era flysch composed of alternating layers of marl (calcareous clay) and sandstone. [cite_start]This poor, mineral-rich soil produces wines of great structure, salinity, and aromatic complexity[cite: 27610, 27611].</li>
-                <li><strong>Magredi (Grave):</strong> The vast alluvial plains of the Friuli Grave DOC are covered in gravelly, stony soils. [cite_start]The stones absorb and radiate heat, yielding aromatic and crisp white wines[cite: 27643, 27644, 27646].</li>
-                [cite_start]<li><strong>Terra Rossa:</strong> The Carso plateau features a shallow, rocky topsoil of iron-rich red clay over a solid limestone bedrock, producing wines with pronounced, savory minerality[cite: 27652].</li>
+                <li><strong>Ponca:</strong> The most prestigious soil, found in the hills of Collio and Colli Orientali. It is a stratified Eocene-era flysch composed of alternating layers of marl (calcareous clay) and sandstone. This poor, mineral-rich soil produces wines of great structure, salinity, and aromatic complexity.</li>
+                <li><strong>Magredi (Grave):</strong> The vast alluvial plains of the Friuli Grave DOC are covered in gravelly, stony soils. The stones absorb and radiate heat, yielding aromatic and crisp white wines.</li>
+                <li><strong>Terra Rossa:</strong> The Carso plateau features a shallow, rocky topsoil of iron-rich red clay over a solid limestone bedrock, producing wines with pronounced, savory minerality.</li>
             </ul>
 
             <h3>Lombardy: Glacial and Alpine Diversity</h3>
             <ul>
-                <li><strong>Franciacorta:</strong> A morainic amphitheater formed by ancient glaciers. [cite_start]The soils are sand- and silt-rich, full of stones and gravel, offering exceptional drainage—ideal for sparkling wine grapes[cite: 28639, 28641].</li>
-                <li><strong>Valtellina:</strong> Vineyards are on shallow, acidic, sandy soils derived from metamorphic rock (gneiss and mica schist). [cite_start]These poor soils stress the vines, resulting in concentrated flavors and a distinct minerality[cite: 28741, 28742].</li>
-                [cite_start]<li><strong>Oltrepò Pavese:</strong> Complex soils of marine origin, dominated by calcareous marl and limestone, often compared to the terroirs of Barolo and Burgundy and well-suited to Pinot Nero[cite: 28841].</li>
+                <li><strong>Franciacorta:</strong> A morainic amphitheater formed by ancient glaciers. The soils are sand- and silt-rich, full of stones and gravel, offering exceptional drainage—ideal for sparkling wine grapes.</li>
+                <li><strong>Valtellina:</strong> Vineyards are on shallow, acidic, sandy soils derived from metamorphic rock (gneiss and mica schist). These poor soils stress the vines, resulting in concentrated flavors and a distinct minerality.</li>
+                <li><strong>Oltrepò Pavese:</strong> Complex soils of marine origin, dominated by calcareous marl and limestone, often compared to the terroirs of Barolo and Burgundy and well-suited to Pinot Nero.</li>
             </ul>
 
             <h3>Veneto: Volcanic and Alluvial Lands</h3>
             <ul>
-                <li><strong>Soave Classico:</strong> Famously divided between two soil types. The eastern part (Monteforte d'Alpone) is defined by dark, mineral-rich volcanic soils (basalt), which produce structured, ageworthy wines. [cite_start]The western part (Soave) has limestone soils that yield more aromatic and elegant wines[cite: 29710, 29712, 29714].</li>
-                [cite_start]<li><strong>Valpolicella Classico:</strong> A mosaic of calcareous marl soils (similar to Barolo's Tortonian) and volcanic intrusions, creating a complex terroir for its red blends[cite: 29700, 29701, 29704].</li>
-                <li><strong>Lugana:</strong> A flat plain of compact, stratified clay rich in mineral salts, left by the retreat of a glacier. [cite_start]This dense soil is credited with giving the Turbiana grape its signature body, structure, and salinity[cite: 29726, 29727].</li>
+                <li><strong>Soave Classico:</strong> Famously divided between two soil types. The eastern part (Monteforte d'Alpone) is defined by dark, mineral-rich volcanic soils (basalt), which produce structured, ageworthy wines. The western part (Soave) has limestone soils that yield more aromatic and elegant wines.</li>
+                <li><strong>Valpolicella Classico:</strong> A mosaic of calcareous marl soils (similar to Barolo's Tortonian) and volcanic intrusions, creating a complex terroir for its red blends.</li>
+                <li><strong>Lugana:</strong> A flat plain of compact, stratified clay rich in mineral salts, left by the retreat of a glacier. This dense soil is credited with giving the Turbiana grape its signature body, structure, and salinity.</li>
             </ul>
         </section>
 
@@ -514,33 +517,33 @@
             
             <h3>Italian National Classification System</h3>
             <ul>
-                <li><strong>DOCG (Denominazione di Origine Controllata e Garantita):</strong> The highest tier, with the strictest production rules and a mandatory tasting panel guarantee. [cite_start]Examples: Barolo, Amarone della Valpolicella, Franciacorta[cite: 23656].</li>
-                <li><strong>DOC (Denominazione di Origine Controllata):</strong> The main quality wine tier with legally defined geographical areas and production rules. [cite_start]Examples: Langhe, Soave, Alto Adige[cite: 23657].</li>
-                <li><strong>IGT (Indicazione Geografica Tipica):</strong> A more flexible category corresponding to the EU's PGI, allowing for wider geographical areas and more freedom with grape varieties. [cite_start]Piedmont is unique in that it does not use the IGT category[cite: 18619, 23658].</li>
-                [cite_start]<li><strong>Vino:</strong> The most basic "Table Wine" category[cite: 23659].</li>
+                <li><strong>DOCG (Denominazione di Origine Controllata e Garantita):</strong> The highest tier, with the strictest production rules and a mandatory tasting panel guarantee. Examples: Barolo, Amarone della Valpolicella, Franciacorta.</li>
+                <li><strong>DOC (Denominazione di Origine Controllata):</strong> The main quality wine tier with legally defined geographical areas and production rules. Examples: Langhe, Soave, Alto Adige.</li>
+                <li><strong>IGT (Indicazione Geografica Tipica):</strong> A more flexible category corresponding to the EU's PGI, allowing for wider geographical areas and more freedom with grape varieties. Piedmont is unique in that it does not use the IGT category.</li>
+                <li><strong>Vino:</strong> The most basic "Table Wine" category.</li>
             </ul>
 
             <h3>Key Regional Hierarchies & Crus</h3>
             <h4>Piedmont: Menzioni Geografiche Aggiuntive (MGA)</h4>
             <p>Both Barolo and Barbaresco have an official list of legally defined single vineyard areas, or *crus*, known as MGA. These represent the pinnacle of the quality hierarchy.</p>
             <ul>
-                [cite_start]<li><strong>Top Barolo MGAs:</strong> Cannubi (Barolo), Rocche dell'Annunziata (La Morra), Brunate (La Morra/Barolo), Cerequio (La Morra/Barolo), Villero (Castiglione Falletto), Monprivato (Castiglione Falletto), Bussia (Monforte d'Alba), Ginestra (Monforte d'Alba), Francia (Serralunga d'Alba), Vigna Rionda (Serralunga d'Alba)[cite: 16680].</li>
-                [cite_start]<li><strong>Top Barbaresco MGAs:</strong> Asili (Barbaresco), Rabajà (Barbaresco), Martinenga (Barbaresco), Montestefano (Barbaresco), Albesani (Neive), Gallina (Neive), Pajorè (Treiso)[cite: 16539].</li>
-                [cite_start]<li><strong>Vigna:</strong> When this term appears on a label with an MGA, it denotes a specific, named parcel within that larger MGA and must adhere to even stricter production criteria, such as lower yields[cite: 18627, 18628].</li>
+                <li><strong>Top Barolo MGAs:</strong> Cannubi (Barolo), Rocche dell'Annunziata (La Morra), Brunate (La Morra/Barolo), Cerequio (La Morra/Barolo), Villero (Castiglione Falletto), Monprivato (Castiglione Falletto), Bussia (Monforte d'Alba), Ginestra (Monforte d'Alba), Francia (Serralunga d'Alba), Vigna Rionda (Serralunga d'Alba).</li>
+                <li><strong>Top Barbaresco MGAs:</strong> Asili (Barbaresco), Rabajà (Barbaresco), Martinenga (Barbaresco), Montestefano (Barbaresco), Albesani (Neive), Gallina (Neive), Pajorè (Treiso).</li>
+                <li><strong>Vigna:</strong> When this term appears on a label with an MGA, it denotes a specific, named parcel within that larger MGA and must adhere to even stricter production criteria, such as lower yields.</li>
             </ul>
             
             <h4>Veneto: Classico, Superiore, and UGA</h4>
             <ul>
-                [cite_start]<li><strong>Classico:</strong> This term denotes the original, historic, and typically hilly heartland of a production zone, such as Valpolicella Classico or Soave Classico[cite: 22297].</li>
-                [cite_start]<li><strong>Superiore:</strong> A legal term indicating higher minimum alcohol and often lower yields, as seen in Valpolicella Superiore or Bardolino Superiore[cite: 23086].</li>
-                <li><strong>Conegliano Valdobbiadene Hierarchy:</strong> A clear geographical pyramid. The base is the broader Prosecco DOC. Above it is the **Conegliano Valdobbiadene Prosecco Superiore DOCG**. Within the DOCG are the **"Rive"**, 43 specified steep-sloped communes functioning as crus. [cite_start]At the very top is the 107-hectare **Superiore di Cartizze** "grand cru"[cite: 29674, 29675].</li>
-                [cite_start]<li><strong>Soave UGA:</strong> In 2019, Soave officially recognized 33 Unità Geografiche Aggiuntive (UGA), or crus, such as Monte Carbonare and Calvarino, which can be named on the label[cite: 29677].</li>
+                <li><strong>Classico:</strong> This term denotes the original, historic, and typically hilly heartland of a production zone, such as Valpolicella Classico or Soave Classico.</li>
+                <li><strong>Superiore:</strong> A legal term indicating higher minimum alcohol and often lower yields, as seen in Valpolicella Superiore or Bardolino Superiore.</li>
+                <li><strong>Conegliano Valdobbiadene Hierarchy:</strong> A clear geographical pyramid. The base is the broader Prosecco DOC. Above it is the **Conegliano Valdobbiadene Prosecco Superiore DOCG**. Within the DOCG are the **"Rive"**, 43 specified steep-sloped communes functioning as crus. At the very top is the 107-hectare **Superiore di Cartizze** "grand cru".</li>
+                <li><strong>Soave UGA:</strong> In 2019, Soave officially recognized 33 Unità Geografiche Aggiuntive (UGA), or crus, such as Monte Carbonare and Calvarino, which can be named on the label.</li>
             </ul>
 
             <h4>Lombardy: Subzones and DOCG Focus</h4>
             <ul>
-                [cite_start]<li><strong>Valtellina Superiore DOCG:</strong> The quality hierarchy is defined by its five official subzones: Maroggia, Sassella, Grumello, Inferno, and Valgella[cite: 28767].</li>
-                [cite_start]<li><strong>Franciacorta/Oltrepò Pavese:</strong> Prestige is defined by the DOCG status itself and further refined by style (e.g., Satèn, Riserva) and aging requirements, rather than a system of named vineyards[cite: 28582, 28851].</li>
+                <li><strong>Valtellina Superiore DOCG:</strong> The quality hierarchy is defined by its five official subzones: Maroggia, Sassella, Grumello, Inferno, and Valgella.</li>
+                <li><strong>Franciacorta/Oltrepò Pavese:</strong> Prestige is defined by the DOCG status itself and further refined by style (e.g., Satèn, Riserva) and aging requirements, rather than a system of named vineyards.</li>
             </ul>
         </section>
 
@@ -548,31 +551,31 @@
             <h2>Producers & Lore</h2>
             
             <h3>Piedmont</h3>
-            <p><strong>Historical Lore: The "Barolo Wars."</strong> A seismic shift in the 1980s that pitted "traditionalist" producers against "modernists." Traditionalists (Bartolo Mascarello, Giuseppe Rinaldi) championed long macerations and aging in large, old Slavonian *botti*. Modernists (Elio Altare, Angelo Gaja) introduced short macerations and aging in small French *barriques*. [cite_start]This conflict ultimately forced all producers to elevate their practices, leading to a dramatic increase in overall quality[cite: 18381, 18488, 18507]. [cite_start]Another key figure was **Renato Ratti**, who created the first comprehensive map of Barolo's crus in the 1970s, laying the groundwork for the modern MGA system[cite: 18378].</p>
+            <p><strong>Historical Lore: The "Barolo Wars."</strong> A seismic shift in the 1980s that pitted "traditionalist" producers against "modernists." Traditionalists (Bartolo Mascarello, Giuseppe Rinaldi) championed long macerations and aging in large, old Slavonian *botti*. Modernists (Elio Altare, Angelo Gaja) introduced short macerations and aging in small French *barriques*. This conflict ultimately forced all producers to elevate their practices, leading to a dramatic increase in overall quality. Another key figure was **Renato Ratti**, who created the first comprehensive map of Barolo's crus in the 1970s, laying the groundwork for the modern MGA system.</p>
             <ul>
-                <li><strong>Giacomo Conterno (Monforte d'Alba):</strong> An icon of traditional Barolo. Their "Monfortino" Riserva, sourced from the Francia MGA, is one of Italy's most sought-after and long-lived wines. [cite_start]They employ very long macerations and extended aging in large *botti*[cite: 18594, 16680].</li>
-                <li><strong>Bruno Giacosa (Neive/Serralunga):</strong> A legendary producer of both Barbaresco and Barolo, known for an uncompromising commitment to quality. His red-label Riservas are benchmarks. [cite_start]Key crus include Asili and Rabajà in Barbaresco, and Falletto and Le Rocche del Falletto in Barolo[cite: 18595, 16539, 16680].</li>
-                <li><strong>Gaja (Barbaresco):</strong> Led by Angelo Gaja, this estate almost single-handedly brought modern Barbaresco to the world stage. Gaja introduced international standards, including the use of barriques and international varieties. [cite_start]His single-vineyard wines (Sorì Tildin, Sorì San Lorenzo, Costa Russi) are icons, though they were famously declassified to Langhe Nebbiolo for a period[cite: 18595, 18504].</li>
-                <li><strong>Bartolo Mascarello (Barolo):</strong> The staunch heart of Barolo traditionalism. [cite_start]The estate famously produces only one Barolo, a blend from four top crus (Cannubi, San Lorenzo, Ruè, Rocche dell’Annunziata), refusing to bottle single-vineyard wines as a statement against the "Burgundianization" of the region[cite: 18594, 16680].</li>
-                [cite_start]<li><strong>Produttori del Barbaresco (Barbaresco):</strong> A world-class cooperative founded in 1958. In top vintages, they produce nine single-vineyard Riservas from top MGAs (e.g., Asili, Rabajà, Montestefano) that offer unparalleled quality and terroir expression for their price, making them a benchmark for value[cite: 18598, 16539].</li>
+                <li><strong>Giacomo Conterno (Monforte d'Alba):</strong> An icon of traditional Barolo. Their "Monfortino" Riserva, sourced from the Francia MGA, is one of Italy's most sought-after and long-lived wines. They employ very long macerations and extended aging in large *botti*.</li>
+                <li><strong>Bruno Giacosa (Neive/Serralunga):</strong> A legendary producer of both Barbaresco and Barolo, known for an uncompromising commitment to quality. His red-label Riservas are benchmarks. Key crus include Asili and Rabajà in Barbaresco, and Falletto and Le Rocche del Falletto in Barolo.</li>
+                <li><strong>Gaja (Barbaresco):</strong> Led by Angelo Gaja, this estate almost single-handedly brought modern Barbaresco to the world stage. Gaja introduced international standards, including the use of barriques and international varieties. His single-vineyard wines (Sorì Tildin, Sorì San Lorenzo, Costa Russi) are icons, though they were famously declassified to Langhe Nebbiolo for a period.</li>
+                <li><strong>Bartolo Mascarello (Barolo):</strong> The staunch heart of Barolo traditionalism. The estate famously produces only one Barolo, a blend from four top crus (Cannubi, San Lorenzo, Ruè, Rocche dell’Annunziata), refusing to bottle single-vineyard wines as a statement against the "Burgundianization" of the region.</li>
+                <li><strong>Produttori del Barbaresco (Barbaresco):</strong> A world-class cooperative founded in 1958. In top vintages, they produce nine single-vineyard Riservas from top MGAs (e.g., Asili, Rabajà, Montestefano) that offer unparalleled quality and terroir expression for their price, making them a benchmark for value.</li>
             </ul>
             
             <h3>Veneto</h3>
             <ul>
-                <li><strong>Quintarelli Giuseppe (Valpolicella):</strong> The undisputed master of traditional Amarone. His wines are legendary for their complexity, depth, and near-immortal aging potential. [cite_start]Production is artisanal, with long appassimento and extended aging in large Slavonian *botti*[cite: 29967].</li>
-                <li><strong>Romano Dal Forno (Valpolicella):</strong> The leading figure of the modernist Amarone school. His wines are incredibly dense, powerful, and polished, aged in new barriques. [cite_start]He is known for meticulous viticulture with extremely low yields[cite: 29969].</li>
-                <li><strong>Pieropan (Soave):</strong> The most famous estate in Soave, pioneers who demonstrated the aging potential of Garganega. [cite_start]They were the first to bottle single-vineyard Soave with their iconic Calvarino (from volcanic soil) and La Rocca (from limestone soil) in the 1970s[cite: 29984, 29667].</li>
-                <li><strong>Masi (Valpolicella):</strong> A large but historic and quality-focused producer. [cite_start]They are famous for their single-vineyard Amarones and for pioneering and trademarking the modern *ripasso* style with their Campofiorin wine[cite: 29972, 29849].</li>
-                [cite_start]<li><strong>Bisol1542 (Conegliano Valdobbiadene):</strong> A historic family with roots in Cartizze dating back to 1542. They are a benchmark producer for high-quality, terroir-specific Prosecco Superiore, offering a range of single-vineyard "Rive" and a top Cartizze bottling[cite: 29995].</li>
+                <li><strong>Quintarelli Giuseppe (Valpolicella):</strong> The undisputed master of traditional Amarone. His wines are legendary for their complexity, depth, and near-immortal aging potential. Production is artisanal, with long appassimento and extended aging in large Slavonian *botti*.</li>
+                <li><strong>Romano Dal Forno (Valpolicella):</strong> The leading figure of the modernist Amarone school. His wines are incredibly dense, powerful, and polished, aged in new barriques. He is known for meticulous viticulture with extremely low yields.</li>
+                <li><strong>Pieropan (Soave):</strong> The most famous estate in Soave, pioneers who demonstrated the aging potential of Garganega. They were the first to bottle single-vineyard Soave with their iconic Calvarino (from volcanic soil) and La Rocca (from limestone soil) in the 1970s.</li>
+                <li><strong>Masi (Valpolicella):</strong> A large but historic and quality-focused producer. They are famous for their single-vineyard Amarones and for pioneering and trademarking the modern *ripasso* style with their Campofiorin wine.</li>
+                <li><strong>Bisol1542 (Conegliano Valdobbiadene):</strong> A historic family with roots in Cartizze dating back to 1542. They are a benchmark producer for high-quality, terroir-specific Prosecco Superiore, offering a range of single-vineyard "Rive" and a top Cartizze bottling.</li>
             </ul>
 
             <h3>Lombardy</h3>
             <ul>
-                <li><strong>Ca' del Bosco (Franciacorta):</strong> A leader in quality and innovation, known for a meticulous, almost fanatical approach. Their top cuvée, "Annamaria Clementi," is an icon of the region. [cite_start]They employ modern techniques to create polished, age-worthy sparkling wines[cite: 28706, 28707].</li>
-                <li><strong>Bellavista (Franciacorta):</strong> Another large, high-quality house instrumental in building Franciacorta's global brand. [cite_start]Known for a consistent, elegant style across their range[cite: 28707].</li>
-                <li><strong>Ar.Pe.Pe. (Valtellina):</strong> A family-run estate revered for its staunchly traditional approach to Alpine Nebbiolo. [cite_start]They are famous for exceptionally long aging regimes, holding back Riserva wines for a decade or more before release, creating ethereal and complex wines[cite: 28802, 28803].</li>
-                [cite_start]<li><strong>Nino Negri (Valtellina):</strong> The region's largest and most historic winery, offering a reliable introduction to all styles of Valtellina, including an excellent Sforzato ("5 Stelle")[cite: 28801].</li>
-                <li><strong>Conte Vistarino (Oltrepò Pavese):</strong> A historic estate credited with being one of the first to champion Pinot Nero in the region in the 19th century. [cite_start]They remain a benchmark for both Metodo Classico sparkling wines and still Pinot Nero[cite: 28894].</li>
+                <li><strong>Ca' del Bosco (Franciacorta):</strong> A leader in quality and innovation, known for a meticulous, almost fanatical approach. Their top cuvée, "Annamaria Clementi," is an icon of the region. They employ modern techniques to create polished, age-worthy sparkling wines.</li>
+                <li><strong>Bellavista (Franciacorta):</strong> Another large, high-quality house instrumental in building Franciacorta's global brand. Known for a consistent, elegant style across their range.</li>
+                <li><strong>Ar.Pe.Pe. (Valtellina):</strong> A family-run estate revered for its staunchly traditional approach to Alpine Nebbiolo. They are famous for exceptionally long aging regimes, holding back Riserva wines for a decade or more before release, creating ethereal and complex wines.</li>
+                <li><strong>Nino Negri (Valtellina):</strong> The region's largest and most historic winery, offering a reliable introduction to all styles of Valtellina, including an excellent Sforzato ("5 Stelle").</li>
+                <li><strong>Conte Vistarino (Oltrepò Pavese):</strong> A historic estate credited with being one of the first to champion Pinot Nero in the region in the 19th century. They remain a benchmark for both Metodo Classico sparkling wines and still Pinot Nero.</li>
             </ul>
         </section>
 
@@ -591,97 +594,97 @@
                     <tr>
                         <td>2023</td>
                         <td>Fair</td>
-                        <td>Challenging and wet. Fungal pressure was high, followed by a heatwave. [cite_start]Expected to be lower in alcohol and acid[cite: 18757, 18758, 18760].</td>
+                        <td>Challenging and wet. Fungal pressure was high, followed by a heatwave. Expected to be lower in alcohol and acid.</td>
                     </tr>
                     <tr>
                         <td>2022</td>
                         <td>Good</td>
-                        <td>Hot, dry, and powerful. A drought year with an early harvest. [cite_start]Wines are ripe and concentrated but may lack freshness[cite: 18763, 29334].</td>
+                        <td>Hot, dry, and powerful. A drought year with an early harvest. Wines are ripe and concentrated but may lack freshness.</td>
                     </tr>
                     <tr>
                         <td>2021</td>
                         <td>Excellent</td>
-                        <td>Classic and balanced. A spring frost cut yields, concentrating the fruit. [cite_start]A hot, dry summer with good diurnal shifts led to excellent aromatic complexity and acidity[cite: 18768, 29355].</td>
+                        <td>Classic and balanced. A spring frost cut yields, concentrating the fruit. A hot, dry summer with good diurnal shifts led to excellent aromatic complexity and acidity.</td>
                     </tr>
                     <tr>
                         <td>2020</td>
                         <td>Excellent</td>
-                        <td>Warm and balanced. [cite_start]A consistently warm summer without extreme heat produced elegant, aromatic wines with fresh acidity and firm tannins[cite: 18774, 18775, 29357].</td>
+                        <td>Warm and balanced. A consistently warm summer without extreme heat produced elegant, aromatic wines with fresh acidity and firm tannins.</td>
                     </tr>
                     <tr>
                         <td>2019</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. A long, cool growing season with a late harvest produced wines with excellent structure, firm tannins, and aromatic complexity. [cite_start]Built for long aging[cite: 18778, 18783, 29442].</td>
+                        <td>Cool and classic. A long, cool growing season with a late harvest produced wines with excellent structure, firm tannins, and aromatic complexity. Built for long aging.</td>
                     </tr>
                     <tr>
                         <td>2018</td>
                         <td>Good</td>
-                        <td>Challenging and variable. A rainy year with high humidity. [cite_start]Producer-dependent, with the best being elegant, aromatic, and lighter-bodied[cite: 18785, 18787].</td>
+                        <td>Challenging and variable. A rainy year with high humidity. Producer-dependent, with the best being elegant, aromatic, and lighter-bodied.</td>
                     </tr>
                     <tr>
                         <td>2017</td>
                         <td>Good</td>
-                        <td>Hot, dry, and powerful. Marked by frost, hail, and extreme summer temperatures. [cite_start]Ripe, powerful wines, but some lack freshness[cite: 18789, 29226].</td>
+                        <td>Hot, dry, and powerful. Marked by frost, hail, and extreme summer temperatures. Ripe, powerful wines, but some lack freshness.</td>
                     </tr>
                     <tr>
                         <td>2016</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. Widely considered one of the greatest modern vintages. A long, steady growing season produced wines of superb balance, power, and harmony. [cite_start]Built for very long-term aging[cite: 18793, 29445].</td>
+                        <td>Cool and classic. Widely considered one of the greatest modern vintages. A long, steady growing season produced wines of superb balance, power, and harmony. Built for very long-term aging.</td>
                     </tr>
                     <tr>
                         <td>2015</td>
                         <td>Good</td>
-                        <td>Hot, dry, and powerful. [cite_start]A hot summer led to ripe, concentrated wines, though some lack the finesse and acidity of cooler years[cite: 18797, 29228].</td>
+                        <td>Hot, dry, and powerful. A hot summer led to ripe, concentrated wines, though some lack the finesse and acidity of cooler years.</td>
                     </tr>
                     <tr>
                         <td>2014</td>
                         <td>Fair</td>
-                        <td>Cool and wet. A very difficult vintage saved by a warm, dry autumn. [cite_start]Wines are elegant and high in acidity but light-bodied and lean[cite: 18801, 18805, 29557].</td>
+                        <td>Cool and wet. A very difficult vintage saved by a warm, dry autumn. Wines are elegant and high in acidity but light-bodied and lean.</td>
                     </tr>
                     <tr>
                         <td>2013</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. [cite_start]A late harvest after a long growing season produced wines with excellent structure, acidity, and aging potential, similar to 2010 and 2016[cite: 18807, 29449].</td>
+                        <td>Cool and classic. A late harvest after a long growing season produced wines with excellent structure, acidity, and aging potential, similar to 2010 and 2016.</td>
                     </tr>
                     <tr>
                         <td>2012</td>
                         <td>Good</td>
-                        <td>Warm and balanced. [cite_start]A hot summer resulted in unexpectedly fresh wines with good balance and acidity, though a lighter vintage overall[cite: 18812, 18818].</td>
+                        <td>Warm and balanced. A hot summer resulted in unexpectedly fresh wines with good balance and acidity, though a lighter vintage overall.</td>
                     </tr>
                     <tr>
                         <td>2011</td>
                         <td>Good</td>
-                        <td>Hot, dry, and powerful. A hot year with an early harvest. [cite_start]Wines are ripe and powerful but can lack complexity and balance[cite: 18820, 29330].</td>
+                        <td>Hot, dry, and powerful. A hot year with an early harvest. Wines are ripe and powerful but can lack complexity and balance.</td>
                     </tr>
                     <tr>
                         <td>2010</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. A benchmark vintage. A long, cool season produced wines of exceptional harmony, aromatic complexity, and powerful structure. [cite_start]Very long-lived[cite: 18828, 29550].</td>
+                        <td>Cool and classic. A benchmark vintage. A long, cool season produced wines of exceptional harmony, aromatic complexity, and powerful structure. Very long-lived.</td>
                     </tr>
                     <tr>
                         <td>2008</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. [cite_start]An austere, structured, and aromatic vintage with high acidity and firm tannins, built for the long haul[cite: 18839, 18841].</td>
+                        <td>Cool and classic. An austere, structured, and aromatic vintage with high acidity and firm tannins, built for the long haul.</td>
                     </tr>
                     <tr>
                         <td>2006</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. [cite_start]Powerful, structured, and tannic vintage with immense aging potential[cite: 18845, 18846].</td>
+                        <td>Cool and classic. Powerful, structured, and tannic vintage with immense aging potential.</td>
                     </tr>
                     <tr>
                         <td>2004</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. [cite_start]A superb, classically styled vintage with great balance, perfume, and structure[cite: 18850].</td>
+                        <td>Cool and classic. A superb, classically styled vintage with great balance, perfume, and structure.</td>
                     </tr>
                     <tr>
                         <td>2002</td>
                         <td>Poor</td>
-                        <td>Cool and wet. A disastrously cold and rainy vintage. [cite_start]Most top producers declassified their wines[cite: 18854].</td>
+                        <td>Cool and wet. A disastrously cold and rainy vintage. Most top producers declassified their wines.</td>
                     </tr>
                     <tr>
                         <td>2001</td>
                         <td>Excellent</td>
-                        <td>Cool and classic. [cite_start]An outstanding, traditional-style vintage with powerful structure and great aging potential[cite: 18857].</td>
+                        <td>Cool and classic. An outstanding, traditional-style vintage with powerful structure and great aging potential.</td>
                     </tr>
                 </tbody>
             </table>
@@ -690,29 +693,29 @@
         <section id="lexicon">
             <h2>Regional Lexicon</h2>
             <ul>
-                [cite_start]<li><strong>Amarone:</strong> A powerful, dry red DOCG wine from Valpolicella made from grapes dried via the *appassimento* process[cite: 21904].</li>
-                [cite_start]<li><strong>Appassimento:</strong> The process of drying grapes off the vine, typically for several months, to concentrate sugars, acids, and flavors[cite: 21948].</li>
-                [cite_start]<li><strong>Bricco (or Bric):</strong> A Piedmontese dialect term for the crest or summit of a hill, indicating a superior vineyard site[cite: 18634, 22116].</li>
-                [cite_start]<li><strong>Chiaretto:</strong> The term for rosé wines in the Bardolino and Garda DOCs[cite: 19726].</li>
-                [cite_start]<li><strong>Classico:</strong> A legal term indicating that a wine comes from the original, historic heartland of a production zone, which is typically hilly and of higher quality[cite: 22297].</li>
-                [cite_start]<li><strong>Colli:</strong> Italian for "hills," used in the names of many appellations located in foothills (e.g., Colli Orientali, Colli Bolognesi)[cite: 22307].</li>
-                [cite_start]<li><strong>Frizzante:</strong> Italian for a semi-sparkling or lightly sparkling wine (1-2.5 bars of pressure)[cite: 22524, 22526].</li>
-                [cite_start]<li><strong>MGA (Menzione Geografica Aggiuntiva):</strong> A legally defined and delimited single vineyard area, or *cru*, in Barolo, Barbaresco, and Roero[cite: 18624, 22759].</li>
-                [cite_start]<li><strong>Metodo Classico:</strong> The Italian term for the traditional method of sparkling wine production with secondary fermentation in the bottle, mandated for Franciacorta, Trento DOC, and Oltrepò Pavese DOCG[cite: 22757].</li>
-                [cite_start]<li><strong>Passito:</strong> A general term for a sweet wine made from dried (*appassimento*) grapes[cite: 18639, 22880].</li>
-                <li><strong>Pergola:</strong> A traditional high vine training system where vines form an overhead canopy. [cite_start]The *Pergola Trentina* and *Pergola Veronese* are key examples[cite: 29206, 29788].</li>
-                [cite_start]<li><strong>Ponca:</strong> The local Friulian term for the Eocene-era flysch soil of Collio and Colli Orientali, composed of stratified marl and sandstone[cite: 27610].</li>
-                <li><strong>Recioto:</strong> A sweet wine made from dried grapes where fermentation is stopped to retain residual sugar. [cite_start]Produced in Valpolicella (red), Soave (white), and Gambellara (white)[cite: 22927, 22929].</li>
-                [cite_start]<li><strong>Ripasso:</strong> A production technique and DOC in Valpolicella where young wine is re-fermented on the unpressed grape skins of Amarone or Recioto[cite: 22953].</li>
-                [cite_start]<li><strong>Riserva:</strong> A legal term indicating a wine has undergone a longer period of aging than the *normale* version, often including extended time in wood[cite: 18629, 22956].</li>
-                [cite_start]<li><strong>Rive:</strong> A term used in Conegliano Valdobbiadene for a wine from one of 43 recognized steep-sloped communes or hamlets, akin to a *cru* designation[cite: 30113].</li>
-                <li><strong>Satèn:</strong> A style unique to Franciacorta. [cite_start]It is a Blanc de Blancs bottled at a lower pressure (max. 5 atmospheres) to create a softer, creamier mousse, and can only be made in a Brut style[cite: 28680, 28681, 28683].</li>
-                [cite_start]<li><strong>Sforzato (or Sfursat):</strong> A powerful, dry *passito* red wine from Valtellina DOCG made from dried Nebbiolo (Chiavennasca) grapes[cite: 23035].</li>
-                [cite_start]<li><strong>Sorì:</strong> A Piedmontese dialect term for a prime, south-facing hillside vineyard[cite: 18636, 23058].</li>
-                [cite_start]<li><strong>Spumante:</strong> Italian for a fully sparkling wine (min. 3.5 bars of pressure)[cite: 23070, 23071].</li>
-                [cite_start]<li><strong>Superiore:</strong> A legal term for a DOC/G wine with a higher minimum alcohol content and often from lower yields than the standard version[cite: 18631, 23086].</li>
-                [cite_start]<li><strong>UGA (Unità Geografica Aggiuntiva):</strong> "Additional Geographical Unit," the official term for a legally defined cru or subzone in regions like Soave and Montepulciano[cite: 23133].</li>
-                <li><strong>Vigna:</strong> The Italian word for a vineyard. [cite_start]When on a label with an MGA, it denotes a specific parcel within the cru with stricter production rules[cite: 18627].</li>
+                <li><strong>Amarone:</strong> A powerful, dry red DOCG wine from Valpolicella made from grapes dried via the *appassimento* process.</li>
+                <li><strong>Appassimento:</strong> The process of drying grapes off the vine, typically for several months, to concentrate sugars, acids, and flavors.</li>
+                <li><strong>Bricco (or Bric):</strong> A Piedmontese dialect term for the crest or summit of a hill, indicating a superior vineyard site.</li>
+                <li><strong>Chiaretto:</strong> The term for rosé wines in the Bardolino and Garda DOCs.</li>
+                <li><strong>Classico:</strong> A legal term indicating that a wine comes from the original, historic heartland of a production zone, which is typically hilly and of higher quality.</li>
+                <li><strong>Colli:</strong> Italian for "hills," used in the names of many appellations located in foothills (e.g., Colli Orientali, Colli Bolognesi).</li>
+                <li><strong>Frizzante:</strong> Italian for a semi-sparkling or lightly sparkling wine (1-2.5 bars of pressure).</li>
+                <li><strong>MGA (Menzione Geografica Aggiuntiva):</strong> A legally defined and delimited single vineyard area, or *cru*, in Barolo, Barbaresco, and Roero.</li>
+                <li><strong>Metodo Classico:</strong> The Italian term for the traditional method of sparkling wine production with secondary fermentation in the bottle, mandated for Franciacorta, Trento DOC, and Oltrepò Pavese DOCG.</li>
+                <li><strong>Passito:</strong> A general term for a sweet wine made from dried (*appassimento*) grapes.</li>
+                <li><strong>Pergola:</strong> A traditional high vine training system where vines form an overhead canopy. The *Pergola Trentina* and *Pergola Veronese* are key examples.</li>
+                <li><strong>Ponca:</strong> The local Friulian term for the Eocene-era flysch soil of Collio and Colli Orientali, composed of stratified marl and sandstone.</li>
+                <li><strong>Recioto:</strong> A sweet wine made from dried grapes where fermentation is stopped to retain residual sugar. Produced in Valpolicella (red), Soave (white), and Gambellara (white).</li>
+                <li><strong>Ripasso:</strong> A production technique and DOC in Valpolicella where young wine is re-fermented on the unpressed grape skins of Amarone or Recioto.</li>
+                <li><strong>Riserva:</strong> A legal term indicating a wine has undergone a longer period of aging than the *normale* version, often including extended time in wood.</li>
+                <li><strong>Rive:</strong> A term used in Conegliano Valdobbiadene for a wine from one of 43 recognized steep-sloped communes or hamlets, akin to a *cru* designation.</li>
+                <li><strong>Satèn:</strong> A style unique to Franciacorta. It is a Blanc de Blancs bottled at a lower pressure (max. 5 atmospheres) to create a softer, creamier mousse, and can only be made in a Brut style.</li>
+                <li><strong>Sforzato (or Sfursat):</strong> A powerful, dry *passito* red wine from Valtellina DOCG made from dried Nebbiolo (Chiavennasca) grapes.</li>
+                <li><strong>Sorì:</strong> A Piedmontese dialect term for a prime, south-facing hillside vineyard.</li>
+                <li><strong>Spumante:</strong> Italian for a fully sparkling wine (min. 3.5 bars of pressure).</li>
+                <li><strong>Superiore:</strong> A legal term for a DOC/G wine with a higher minimum alcohol content and often from lower yields than the standard version.</li>
+                <li><strong>UGA (Unità Geografica Aggiuntiva):</strong> "Additional Geographical Unit," the official term for a legally defined cru or subzone in regions like Soave and Montepulciano.</li>
+                <li><strong>Vigna:</strong> The Italian word for a vineyard. When on a label with an MGA, it denotes a specific parcel within the cru with stricter production rules.</li>
             </ul>
         </section>
 
@@ -726,17 +729,17 @@
                 <div class="flashcard" id="flashcard">
                     <div class="flashcard-face flashcard-front">
                         <span class="flashcard-category" id="card-category"></span>
-                        <p id="card-question">Welcome to the Northern Italy study deck. Click a button above to begin.</p>
+                        <p id="card-question">Welcome! Click "Study Working Deck" to begin.</p>
                     </div>
                     <div class="flashcard-face flashcard-back">
                         <span class="flashcard-category" id="card-category-back"></span>
-                        <p id="card-answer">Answers will appear here. Click the card to flip it.</p>
+                        <p id="card-answer">The answer will appear here. Click the card to flip it.</p>
                     </div>
                 </div>
             </div>
             <div class="deck-controls">
                 <button id="mark-learned-btn">Mark as Learned</button>
-                 <button id="return-to-working-btn" style="display:none;">Return to Working Deck</button>
+                 <button id="return-to-working-btn">Return to Working Deck</button>
                 <button id="next-card-btn">Next Card</button>
             </div>
             <div class="deck-info" id="deck-info">Select a deck to start studying.</div>
@@ -757,175 +760,194 @@
     </div>
 
     <script>
-        // --- DATA ---
-        const flashcardData = [
-            [cite_start]{ category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barolo DOCG?", answer: "38 months total aging from November 1 of the harvest year, with a minimum of 18 months in wood. [cite: 16667]" },
-            [cite_start]{ category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barbaresco Riserva DOCG?", answer: "50 months total aging from November 1 of the harvest year, with a minimum of 9 months in wood. [cite: 16528]" },
-            { category: "Piedmont", question: "Contrast the soil types and resulting wine styles of Barolo's Tortonian vs. Serravallian zones.", answer: "Tortonian soils (La Morra, Barolo) are younger, calcareous marl, producing softer, more aromatic and elegant wines. [cite_start]Serravallian soils (Monforte d'Alba, Serralunga d'Alba) are older, less fertile sandstone marls, producing more powerful, structured, and tannic wines. [cite: 18415, 18413, 18418]" },
-            { category: "Lombardy", question: "What are the primary grape varieties and minimum lees aging for non-vintage Franciacorta DOCG?", answer: "Grapes: Chardonnay, Pinot Nero, and up to 50% Pinot Bianco. [cite_start]Minimum lees aging is 18 months. [cite: 28667, 28668, 28675]" },
-            { category: "Lombardy", question: "What is Franciacorta Satèn?", answer: "A 'Blanc de Blancs' style made only from white grapes (Chardonnay and up to 50% Pinot Bianco). It is bottled at a lower pressure (max 5 atm) to create a softer, creamier mousse and must be in the Brut style. [cite_start]It requires 24 months on the lees. [cite: 28680, 28681, 28683, 28676]" },
-            { category: "Lombardy", question: "What is Sforzato di Valtellina?", answer: "A dry passito DOCG red wine from Valtellina made from 90%+ Nebbiolo (Chiavennasca) grapes that are dried for ~3 months. [cite_start]It must be aged for at least 20 months (12 in wood) and have a minimum 14% ABV. [cite: 16223, 16225, 16227, 16228, 16229]" },
-            [cite_start]{ category: "Lombardy", question: "List the 5 subzones of Valtellina Superiore DOCG.", answer: "Maroggia, Sassella, Grumello, Inferno, and Valgella. [cite: 16377, 28767]" },
-            [cite_start]{ category: "Veneto", question: "What is the 'ripasso' method?", answer: "A technique unique to Valpolicella where young Valpolicella wine is re-fermented on the unpressed, still-warm grape skins of Amarone or Recioto, adding color, alcohol, and complexity. [cite: 22953, 29858]" },
-            { category: "Veneto", question: "What are the primary grapes and aging requirements for Amarone della Valpolicella Riserva DOCG?", answer: "Grapes: 45-95% Corvina/Corvinone, 5-30% Rondinella. [cite_start]Aging: Minimum 4 years from November 1 of the harvest year. [cite: 19543, 19544, 19553]" },
-            { category: "Veneto", question: "What are the two primary soil types of Soave Classico and how do they affect wine style?", answer: "1. Volcanic soils (basalt/tuff) in the east (Monteforte) produce structured, mineral-driven, ageworthy wines. 2. [cite_start]Limestone soils in the west (Soave) produce more elegant and aromatic wines. [cite: 29710, 29712, 29714, 29715]" },
-            [cite_start]{ category: "Veneto", question: "What is the top of the quality pyramid in Conegliano Valdobbiadene Prosecco DOCG?", answer: "Superiore di Cartizze DOCG, a 107-hectare 'grand cru' subzone known for producing the most complex and refined Prosecco. [cite: 29675, 20054]" },
-            [cite_start]{ category: "Trentino-Alto Adige", question: "What are the primary grape varieties for Trento DOC?", answer: "Chardonnay, Pinot Nero, Pinot Bianco, and/or Pinot Meunier. [cite: 19328]" },
-            [cite_start]{ category: "Trentino-Alto Adige", question: "What is the local name for Nebbiolo in Alto Piemonte?", answer: "Spanna[cite: 22901, 23063]. [cite_start]In Valtellina it is Chiavennasca [cite: 23484] [cite_start]and in Valle d'Aosta it is Picotendro[cite: 24899]."},
-            [cite_start]{ category: "Trentino-Alto Adige", question: "What is 'Kretzer'?", answer: "The local German-dialect term in Alto Adige for a rosé (Rosato) wine, particularly one made from Lagrein or Schiava. [cite: 29448, 18933]" },
-            [cite_start]{ category: "Friuli-Venezia Giulia", question: "What is 'ponca' soil?", answer: "The local Friulian term for the Eocene-era flysch soil, composed of stratified marl and sandstone, characteristic of the Collio and Colli Orientali hills. [cite: 27610, 27957]" },
-            [cite_start]{ category: "Friuli-Venezia Giulia", question: "What is 'Ramato'?", answer: "Meaning 'coppery,' it refers to a traditional skin-contact style of Pinot Grigio in Friuli, which results in a wine with a coppery hue. [cite: 27688]" },
-            [cite_start]{ category: "Friuli-Venezia Giulia", question: "Which producer is credited with saving the Schioppettino grape from extinction?", answer: "The Rapuzzi family of Ronchi di Cialla. [cite: 27509, 27822]" },
-            { category: "Liguria", question: "What is the genetic relationship between Pigato, Vermentino, and Favorita?", answer: "DNA analysis has shown they are genetically the same variety. [cite_start]The differences are cultural and related to biotype expression in different terroirs. [cite: 23419, 28161]" },
-            { category: "Liguria", question: "What is Cinque Terre Sciacchetrà?", answer: "A rare sweet passito wine from the Cinque Terre DOC, made from dried Bosco, Albarola, and Vermentino grapes. [cite_start]Riserva must be aged for 36 months. [cite: 25220, 25221, 28241]" },
-            [cite_start]{ category: "Valle d'Aosta", question: "Which grape variety is grown on pre-phylloxera rootstock at Europe's highest elevations in the Blanc de Morgex et de la Salle subzone?", answer: "Prié Blanc. [cite: 25153, 28153]" },
-            { category: "General", question: "What is the difference between Frizzante and Spumante?", answer: "Frizzante is semi-sparkling (1-2.5 atm pressure). [cite_start]Spumante is fully sparkling (minimum 3.5 atm pressure). [cite: 22524, 22526, 26799]" },
-            [cite_start]{ category: "Piedmont", question: "What are the four communes that make up the Barbaresco DOCG?", answer: "Barbaresco, Neive, Treiso, and a portion of San Rocco Seno d'Elvio (a frazione of Alba)[cite: 16518]."},
-            [cite_start]{ category: "Piedmont", question: "What are the aging requirements for Ghemme DOCG Riserva?", answer: "A minimum of 46 months from Nov. 1, including a minimum of 24 months in wood and 6 months in bottle. [cite: 17605]"},
-            [cite_start]{ category: "Piedmont", question: "What is the grape composition of Roero DOCG Rosso?", answer: "A minimum of 95% Nebbiolo. [cite: 18090]"},
-            [cite_start]{ category: "Piedmont", question: "What are the three main phenotypes of Nebbiolo?", answer: "Lampia (most common), Michet (a virused version of Lampia), and Rosé (genetically a distinct but related variety). [cite: 18448, 18449, 18450]"},
-            [cite_start]{ category: "Lombardy", question: "What is the primary grape of Oltrepò Pavese Metodo Classico DOCG and what is the minimum percentage required?", answer: "Pinot Nero, with a minimum of 70% required for the standard Metodo Classico, and 85% for the 'Pinot Nero' designation. [cite: 16029, 16032]"},
-            [cite_start]{ category: "Lombardy", question: "What is the local name for Croatina in the Oltrepò Pavese, and what DOC is it most associated with?", answer: "It is locally called Bonarda, and it's the primary grape for Bonarda dell'Oltrepò Pavese DOC. [cite: 15624, 23405]"},
-            [cite_start]{ category: "Veneto", question: "What is the minimum percentage of Corvina/Corvinone in Amarone della Valpolicella?", answer: "45% to 95%. [cite: 19543]"},
-            { category: "Veneto", question: "In Conegliano Valdobbiadene, what are the three tiers of the geographical quality pyramid?", answer: "1. [cite_start]Prosecco DOC (base/plains), 2. Conegliano Valdobbiadene Prosecco Superiore DOCG (hills), 3. Superiore di Cartizze DOCG (107-hectare 'grand cru'). [cite: 29674, 29675]"},
-            [cite_start]{ category: "Trentino-Alto Adige", question: "What is the signature red grape of the Teroldego Rotaliano DOC?", answer: "Teroldego (100%). [cite: 19115]"},
-            [cite_start]{ category: "Trentino-Alto Adige", question: "What is the local German-language name for Alto Adige?", answer: "Südtirol. [cite: 23081]"},
-            [cite_start]{ category: "Friuli-Venezia Giulia", question: "What is the flagship white grape of Friuli, and what was its former name?", answer: "Friulano, formerly known as Tocai Friulano. [cite: 27672, 27944]"},
-            [cite_start]{ category: "Friuli-Venezia Giulia", question: "Which DOCG is dedicated to a sweet wine made from 100% Verduzzo Friulano?", answer: "Ramandolo DOCG. [cite: 22513, 15200]"}
-        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA ---
+            const flashcardData = [
+                { category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barolo DOCG?", answer: "38 months total aging from November 1 of the harvest year, with a minimum of 18 months in wood." },
+                { category: "Piedmont", question: "What are the minimum total aging and wood aging requirements for Barbaresco Riserva DOCG?", answer: "50 months total aging from November 1 of the harvest year, with a minimum of 9 months in wood." },
+                { category: "Piedmont", question: "Contrast the soil types and resulting wine styles of Barolo's Tortonian vs. Serravallian zones.", answer: "Tortonian soils (La Morra, Barolo) are younger, calcareous marl, producing softer, more aromatic and elegant wines. Serravallian soils (Monforte d'Alba, Serralunga d'Alba) are older, less fertile sandstone marls, producing more powerful, structured, and tannic wines." },
+                { category: "Lombardy", question: "What are the primary grape varieties and minimum lees aging for non-vintage Franciacorta DOCG?", answer: "Grapes: Chardonnay, Pinot Nero, and up to 50% Pinot Bianco. Minimum lees aging is 18 months." },
+                { category: "Lombardy", question: "What is Franciacorta Satèn?", answer: "A 'Blanc de Blancs' style made only from white grapes (Chardonnay and up to 50% Pinot Bianco). It is bottled at a lower pressure (max 5 atm) to create a softer, creamier mousse and must be in the Brut style. It requires 24 months on the lees." },
+                { category: "Lombardy", question: "What is Sforzato di Valtellina?", answer: "A dry passito DOCG red wine from Valtellina made from 90%+ Nebbiolo (Chiavennasca) grapes that are dried for ~3 months. It must be aged for at least 20 months (12 in wood) and have a minimum 14% ABV." },
+                { category: "Lombardy", question: "List the 5 subzones of Valtellina Superiore DOCG.", answer: "Maroggia, Sassella, Grumello, Inferno, and Valgella." },
+                { category: "Veneto", question: "What is the 'ripasso' method?", answer: "A technique unique to Valpolicella where young Valpolicella wine is re-fermented on the unpressed, still-warm grape skins of Amarone or Recioto, adding color, alcohol, and complexity." },
+                { category: "Veneto", question: "What are the primary grapes and aging requirements for Amarone della Valpolicella Riserva DOCG?", answer: "Grapes: 45-95% Corvina/Corvinone, 5-30% Rondinella. Aging: Minimum 4 years from November 1 of the harvest year." },
+                { category: "Veneto", question: "What are the two primary soil types of Soave Classico and how do they affect wine style?", answer: "1. Volcanic soils (basalt/tuff) in the east (Monteforte) produce structured, mineral-driven, ageworthy wines. 2. Limestone soils in the west (Soave) produce more elegant and aromatic wines." },
+                { category: "Veneto", question: "What is the top of the quality pyramid in Conegliano Valdobbiadene Prosecco DOCG?", answer: "Superiore di Cartizze DOCG, a 107-hectare 'grand cru' subzone known for producing the most complex and refined Prosecco." },
+                { category: "Trentino-Alto Adige", question: "What are the primary grape varieties for Trento DOC?", answer: "Chardonnay, Pinot Nero, Pinot Bianco, and/or Pinot Meunier." },
+                { category: "Trentino-Alto Adige", question: "What is the local name for Nebbiolo in Alto Piemonte?", answer: "Spanna. In Valtellina it is Chiavennasca and in Valle d'Aosta it is Picotendro."},
+                { category: "Trentino-Alto Adige", question: "What is 'Kretzer'?", answer: "The local German-dialect term in Alto Adige for a rosé (Rosato) wine, particularly one made from Lagrein or Schiava." },
+                { category: "Friuli-Venezia Giulia", question: "What is 'ponca' soil?", answer: "The local Friulian term for the Eocene-era flysch soil, composed of stratified marl and sandstone, characteristic of the Collio and Colli Orientali hills." },
+                { category: "Friuli-Venezia Giulia", question: "What is 'Ramato'?", answer: "Meaning 'coppery,' it refers to a traditional skin-contact style of Pinot Grigio in Friuli, which results in a wine with a coppery hue." },
+                { category: "Friuli-Venezia Giulia", question: "Which producer is credited with saving the Schioppettino grape from extinction?", answer: "The Rapuzzi family of Ronchi di Cialla." },
+                { category: "Liguria", question: "What is the genetic relationship between Pigato, Vermentino, and Favorita?", answer: "DNA analysis has shown they are genetically the same variety. The differences are cultural and related to biotype expression in different terroirs." },
+                { category: "Liguria", question: "What is Cinque Terre Sciacchetrà?", answer: "A rare sweet passito wine from the Cinque Terre DOC, made from dried Bosco, Albarola, and Vermentino grapes. Riserva must be aged for 36 months." },
+                { category: "Valle d'Aosta", question: "Which grape variety is grown on pre-phylloxera rootstock at Europe's highest elevations in the Blanc de Morgex et de la Salle subzone?", answer: "Prié Blanc." },
+                { category: "General", question: "What is the difference between Frizzante and Spumante?", answer: "Frizzante is semi-sparkling (1-2.5 atm pressure). Spumante is fully sparkling (minimum 3.5 atm pressure)." },
+                { category: "Piedmont", question: "What are the four communes that make up the Barbaresco DOCG?", answer: "Barbaresco, Neive, Treiso, and a portion of San Rocco Seno d'Elvio (a frazione of Alba)."},
+                { category: "Piedmont", question: "What are the aging requirements for Ghemme DOCG Riserva?", answer: "A minimum of 46 months from Nov. 1, including a minimum of 24 months in wood and 6 months in bottle."},
+                { category: "Piedmont", question: "What is the grape composition of Roero DOCG Rosso?", answer: "A minimum of 95% Nebbiolo."},
+                { category: "Piedmont", question: "What are the three main phenotypes of Nebbiolo?", answer: "Lampia (most common), Michet (a virused version of Lampia), and Rosé (genetically a distinct but related variety)."},
+                { category: "Lombardy", question: "What is the primary grape of Oltrepò Pavese Metodo Classico DOCG and what is the minimum percentage required?", answer: "Pinot Nero, with a minimum of 70% required for the standard Metodo Classico, and 85% for the 'Pinot Nero' designation."},
+                { category: "Lombardy", question: "What is the local name for Croatina in the Oltrepò Pavese, and what DOC is it most associated with?", answer: "It is locally called Bonarda, and it's the primary grape for Bonarda dell'Oltrepò Pavese DOC."},
+                { category: "Veneto", question: "What is the minimum percentage of Corvina/Corvinone in Amarone della Valpolicella?", answer: "45% to 95%."},
+                { category: "Veneto", question: "In Conegliano Valdobbiadene, what are the three tiers of the geographical quality pyramid?", answer: "1. Prosecco DOC (base/plains), 2. Conegliano Valdobbiadene Prosecco Superiore DOCG (hills), 3. Superiore di Cartizze DOCG (107-hectare 'grand cru')."},
+                { category: "Trentino-Alto Adige", question: "What is the signature red grape of the Teroldego Rotaliano DOC?", answer: "Teroldego (100%)."},
+                { category: "Trentino-Alto Adige", question: "What is the local German-language name for Alto Adige?", answer: "Südtirol."},
+                { category: "Friuli-Venezia Giulia", question: "What is the flagship white grape of Friuli, and what was its former name?", answer: "Friulano, formerly known as Tocai Friulano."},
+                { category: "Friuli-Venezia Giulia", question: "Which DOCG is dedicated to a sweet wine made from 100% Verduzzo Friulano?", answer: "Ramandolo DOCG."}
+            ];
 
-        const testQuestionData = [
-            { type: "List", question: "List the 5 core communes of the Barolo DOCG that account for almost 90% of production." },
-            { type: "Compare/Contrast", question: "Contrast the required grape varieties, minimum aging, and typical style of Franciacorta Satèn DOCG with Franciacorta Rosé DOCG." },
-            { type: "Explain", question: "Explain the 'appassimento' process as it applies to Amarone della Valpolicella, including the minimum drying period and typical weight loss of the grapes." },
-            { type: "Producer", question: "Describe the key differences in vinification philosophy and resulting wine style between iconic Amarone producers Giuseppe Quintarelli and Romano Dal Forno." },
-            { type: "List", question: "List the 7 subzones of the Valle d'Aosta DOC." },
-            { type: "Explain", question: "Explain the geological origins of 'ponca' soil and its influence on the style of wines from Collio and Friuli Colli Orientali." },
-            { type: "Compare/Contrast", question: "Contrast the required grape varieties and aging requirements for Gattinara DOCG and Ghemme DOCG." },
-            { type: "Producer", question: "Who is considered the pioneer of modern Friulian white wine, and what specific technological innovations did he introduce in the 1960s?" },
-            { type: "List", question: "List the 4 DOCGs of Veneto that are based on the 'appassimento' or dried-grape process." },
-            { type: "Explain", question: "Explain the 'Classese' initiative in Oltrepò Pavese. What is its goal and what are some of the stricter rules it will impose?" }
-        ];
+            const testQuestionData = [
+                { type: "List", question: "List the 5 core communes of the Barolo DOCG that account for almost 90% of production." },
+                { type: "Compare/Contrast", question: "Contrast the required grape varieties, minimum aging, and typical style of Franciacorta Satèn DOCG with Franciacorta Rosé DOCG." },
+                { type: "Explain", question: "Explain the 'appassimento' process as it applies to Amarone della Valpolicella, including the minimum drying period and typical weight loss of the grapes." },
+                { type: "Producer", question: "Describe the key differences in vinification philosophy and resulting wine style between iconic Amarone producers Giuseppe Quintarelli and Romano Dal Forno." },
+                { type: "List", question: "List the 7 subzones of the Valle d'Aosta DOC." },
+                { type: "Explain", question: "Explain the geological origins of 'ponca' soil and its influence on the style of wines from Collio and Friuli Colli Orientali." },
+                { type: "Compare/Contrast", question: "Contrast the required grape varieties and aging requirements for Gattinara DOCG and Ghemme DOCG." },
+                { type: "Producer", question: "Who is considered the pioneer of modern Friulian white wine, and what specific technological innovations did he introduce in the 1960s?" },
+                { type: "List", question: "List the 4 DOCGs of Veneto that are based on the 'appassimento' or dried-grape process." },
+                { type: "Explain", question: "Explain the 'Classese' initiative in Oltrepò Pavese. What is its goal and what are some of the stricter rules it will impose?" }
+            ];
 
+            // --- FLASHCARD LOGIC ---
+            let workingDeck = [];
+            let learnedDeck = [];
+            let currentDeck = [];
+            let currentCardIndex = -1;
+            let studyingMode = '';
 
-        // --- FLASHCARD LOGIC ---
-        let workingDeck = [];
-        let learnedDeck = [];
-        let currentDeck = [];
-        let currentCardIndex = -1;
-        let studyingMode = 'working'; // 'working' or 'learned'
+            const cardElement = document.getElementById('flashcard');
+            const questionElement = document.getElementById('card-question');
+            const answerElement = document.getElementById('card-answer');
+            const categoryElement = document.getElementById('card-category');
+            const categoryBackElement = document.getElementById('card-category-back');
+            const deckInfoElement = document.getElementById('deck-info');
+            const markLearnedBtn = document.getElementById('mark-learned-btn');
+            const returnToWorkingBtn = document.getElementById('return-to-working-btn');
+            const nextCardBtn = document.getElementById('next-card-btn');
+            const studyWorkingBtn = document.getElementById('study-working-btn');
+            const studyLearnedBtn = document.getElementById('study-learned-btn');
 
-        const cardElement = document.getElementById('flashcard');
-        const questionElement = document.getElementById('card-question');
-        const answerElement = document.getElementById('card-answer');
-        const categoryElement = document.getElementById('card-category');
-        const categoryBackElement = document.getElementById('card-category-back');
-        const deckInfoElement = document.getElementById('deck-info');
-
-        const markLearnedBtn = document.getElementById('mark-learned-btn');
-        const returnToWorkingBtn = document.getElementById('return-to-working-btn');
-        const nextCardBtn = document.getElementById('next-card-btn');
-        const studyWorkingBtn = document.getElementById('study-working-btn');
-        const studyLearnedBtn = document.getElementById('study-learned-btn');
-
-        function initializeDecks() {
-            workingDeck = [...flashcardData];
-            learnedDeck = [];
-            setStudyMode('working');
-        }
-
-        function setStudyMode(mode) {
-            studyingMode = mode;
-            if (mode === 'working') {
-                currentDeck = workingDeck;
-                markLearnedBtn.style.display = 'inline-block';
-                returnToWorkingBtn.style.display = 'none';
-            } else {
-                currentDeck = learnedDeck;
-                markLearnedBtn.style.display = 'none';
-                returnToWorkingBtn.style.display = 'inline-block';
-            }
-            displayNewCard();
-        }
-
-        function updateDeckInfo() {
-            deckInfoElement.textContent = `Working: ${workingDeck.length} | Learned: ${learnedDeck.length}`;
-        }
-        
-        function displayNewCard() {
-            cardElement.classList.remove('is-flipped');
-            if (currentDeck.length === 0) {
-                questionElement.textContent = `This deck is empty.`;
-                answerElement.textContent = 'Please select another deck to study.';
-                categoryElement.textContent = '';
-                categoryBackElement.textContent = '';
+            function initializeDecks() {
+                workingDeck = [...flashcardData];
+                learnedDeck = [];
                 updateDeckInfo();
-                return;
+                updateButtonStates();
             }
-            
-            let newIndex;
-            do {
-                newIndex = Math.floor(Math.random() * currentDeck.length);
-            } while (currentDeck.length > 1 && newIndex === currentCardIndex);
-            
-            currentCardIndex = newIndex;
-            
-            const card = currentDeck[currentCardIndex];
-            questionElement.textContent = card.question;
-            answerElement.innerHTML = card.answer.replace(/\/g, `<small></small>`);
-            categoryElement.textContent = card.category;
-            categoryBackElement.textContent = card.category;
-            updateDeckInfo();
-        }
 
-        function markAsLearned() {
-            if (studyingMode !== 'working' || currentDeck.length === 0) return;
-            const cardToMove = currentDeck.splice(currentCardIndex, 1)[0];
-            learnedDeck.push(cardToMove);
-            displayNewCard();
-        }
+            function setStudyMode(mode) {
+                studyingMode = mode;
+                currentCardIndex = -1; // Reset index
+                if (mode === 'working') {
+                    currentDeck = workingDeck;
+                } else {
+                    currentDeck = learnedDeck;
+                }
+                displayNewCard();
+                updateButtonStates();
+            }
 
-        function returnToWorking() {
-            if (studyingMode !== 'learned' || currentDeck.length === 0) return;
-            const cardToMove = currentDeck.splice(currentCardIndex, 1)[0];
-            workingDeck.push(cardToMove);
-            displayNewCard();
-        }
+            function updateDeckInfo() {
+                deckInfoElement.textContent = `Working: ${workingDeck.length} | Learned: ${learnedDeck.length}`;
+            }
 
-        cardElement.addEventListener('click', () => {
-            cardElement.classList.toggle('is-flipped');
-        });
-        markLearnedBtn.addEventListener('click', markAsLearned);
-        returnToWorkingBtn.addEventListener('click', returnToWorking);
-        nextCardBtn.addEventListener('click', displayNewCard);
-        studyWorkingBtn.addEventListener('click', () => setStudyMode('working'));
-        studyLearnedBtn.addEventListener('click', () => setStudyMode('learned'));
+            function updateButtonStates() {
+                const isDeckEmpty = currentDeck.length === 0;
+                nextCardBtn.disabled = isDeckEmpty || currentDeck.length <= 1;
+                
+                if (studyingMode === 'working') {
+                    markLearnedBtn.style.display = 'inline-block';
+                    returnToWorkingBtn.style.display = 'none';
+                    markLearnedBtn.disabled = isDeckEmpty;
+                } else if (studyingMode === 'learned') {
+                    markLearnedBtn.style.display = 'none';
+                    returnToWorkingBtn.style.display = 'inline-block';
+                    returnToWorkingBtn.disabled = isDeckEmpty;
+                } else {
+                    markLearnedBtn.style.display = 'inline-block';
+                    returnToWorkingBtn.style.display = 'none';
+                    markLearnedBtn.disabled = true;
+                    nextCardBtn.disabled = true;
+                }
+            }
 
-        // --- TEST GENERATOR LOGIC ---
-        const generateTestBtn = document.getElementById('generate-test-btn');
-        const testContainer = document.getElementById('test-questions-container');
-        const testList = document.getElementById('test-questions-list');
-        
-        generateTestBtn.addEventListener('click', () => {
-            testContainer.style.display = 'block';
-            testList.innerHTML = '';
-            
-            // Shuffle the question data
-            const shuffled = [...testQuestionData].sort(() => 0.5 - Math.random());
-            
-            // Get 5 questions
-            const selectedQuestions = shuffled.slice(0, 5);
-            
-            selectedQuestions.forEach(q => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `<strong>[${q.type}]</strong> ${q.question}`;
-                testList.appendChild(listItem);
+            function displayNewCard() {
+                cardElement.classList.remove('is-flipped');
+                setTimeout(() => { // Allow flip animation to finish before changing content
+                    if (currentDeck.length === 0) {
+                        questionElement.textContent = `This deck is empty.`;
+                        answerElement.textContent = 'Please select another deck to study.';
+                        categoryElement.textContent = 'Empty';
+                        categoryBackElement.textContent = 'Empty';
+                    } else {
+                        let newIndex;
+                        do {
+                            newIndex = Math.floor(Math.random() * currentDeck.length);
+                        } while (currentDeck.length > 1 && newIndex === currentCardIndex);
+                        currentCardIndex = newIndex;
+                        
+                        const card = currentDeck[currentCardIndex];
+                        questionElement.textContent = card.question;
+                        answerElement.textContent = card.answer;
+                        categoryElement.textContent = card.category;
+                        categoryBackElement.textContent = card.category;
+                    }
+                    updateDeckInfo();
+                    updateButtonStates();
+                }, 150);
+            }
+
+            function markAsLearned() {
+                if (studyingMode !== 'working' || currentDeck.length === 0) return;
+                const [cardToMove] = workingDeck.splice(currentCardIndex, 1);
+                learnedDeck.push(cardToMove);
+                currentCardIndex = -1; // Reset index to avoid out-of-bounds
+                displayNewCard();
+            }
+
+            function returnToWorking() {
+                if (studyingMode !== 'learned' || currentDeck.length === 0) return;
+                const [cardToMove] = learnedDeck.splice(currentCardIndex, 1);
+                workingDeck.push(cardToMove);
+                currentCardIndex = -1;
+                displayNewCard();
+            }
+
+            cardElement.addEventListener('click', () => {
+                if (currentDeck.length > 0) {
+                    cardElement.classList.toggle('is-flipped');
+                }
             });
+            markLearnedBtn.addEventListener('click', markAsLearned);
+            returnToWorkingBtn.addEventListener('click', returnToWorking);
+            nextCardBtn.addEventListener('click', displayNewCard);
+            studyWorkingBtn.addEventListener('click', () => setStudyMode('working'));
+            studyLearnedBtn.addEventListener('click', () => setStudyMode('learned'));
+
+            // --- TEST GENERATOR LOGIC ---
+            const generateTestBtn = document.getElementById('generate-test-btn');
+            const testContainer = document.getElementById('test-questions-container');
+            const testList = document.getElementById('test-questions-list');
+            
+            generateTestBtn.addEventListener('click', () => {
+                testContainer.style.display = 'block';
+                testList.innerHTML = '';
+                
+                const shuffled = [...testQuestionData].sort(() => 0.5 - Math.random());
+                const selectedQuestions = shuffled.slice(0, 5);
+                
+                selectedQuestions.forEach(q => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>[${q.type}]</strong> ${q.question}`;
+                    testList.appendChild(listItem);
+                });
+            });
+
+            // Initialize on load
+            initializeDecks();
         });
-
-        // Initialize on load
-        window.onload = initializeDecks;
-
     </script>
 
 </body>
